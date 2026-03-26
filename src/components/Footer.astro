@@ -1,0 +1,81 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer" itemscope itemtype="https://schema.org/LocalBusiness">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3 itemprop="name">E Lanka World International</h3>
+      <p class="description">
+        Sri Lanka's premier destination for high-speed <span itemprop="description">Packaging & Processing Machinery</span>. 
+        Expert solutions for coding, filling, and sealing.
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Our Solutions</h4>
+      <ul>
+        <li><a href="#products">Band Sealers</a></li>
+        <li><a href="#products">Inkjet Coders</a></li>
+        <li><a href="#products">Vacuum Packers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Connect With Us</h4>
+      <div class="social-links">
+        <a href="https://web.facebook.com/CodingMachineSriLanka/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.youtube.com/@atlaslanka2116" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+      <p class="contact-info">
+        Hotline: <span itemprop="telephone">0776344758</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} E Lanka World International. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #001f3f; /* Matching your Navy Header */
+    color: #ffffff;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+    border-top: 4px solid #2563eb;
+  }
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  h3, h4 { color: #3b82f6; margin-bottom: 1.2rem; }
+  .description { font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; }
+  ul { list-style: none; padding: 0; }
+  ul li { margin-bottom: 0.5rem; }
+  ul li a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+  ul li a:hover { color: white; text-decoration: underline; }
+  .social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: white;
+    background: #1e293b;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #1e293b;
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+</style>

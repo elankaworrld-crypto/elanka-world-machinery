@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allProducts = await getCollection('products');
+  
+  // 1. Get ALL categories and remove any empty/null values
+  const rawCategories = allProducts.flatMap(item => item.data.categories || []);
+  const uniqueCategories = [...new Set(rawCategories)].filter(Boolean);
+
+  return uniqueCategories.map(cat => {
+    // 2. Create the URL slug
+    const slug = cat.toLowerCase().trim().replace(/\s+/g, '-');
+    const filteredProducts = allProducts.filter(item => 
+      item.data.categories && item.data.categories.includes(cat)
+    );
+    
+    return {
+      params: { category: slug },
+      props: { 
+        categoryName: cat, 
+        products: filteredProducts,
+        allCategories: uniqueCategories 
+      },
+    };
+  });
+}
+
+const { categoryName, products, allCategories = [] } = Astro.props;
+
+// --- PRO SEO ---
+const seoTitle = `${categoryName} in Sri Lanka | Industrial Grade | E Lanka World`;
+const seoDescription = `High-quality ${categoryName} for industrial and small business use in Sri Lanka. Professional packaging solutions with local warranty.`;
+
+const facebookUrl = "https://www.facebook.com/CodingMachineSriLanka/";
+const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <Header />
+  
+  <main class="category-page">
+    <div class="container">
+      
+      <nav class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> 
+        <a href="/shop">Shop</a> <span>/</span> 
+        <span class="current">{categoryName}</span>
+      </nav>
+
+      <header class="cat-header">
+        <h1>{categoryName} in Sri Lanka</h1>
+        <p class="intro-text">
+          Maximize your production efficiency with our professional <strong>{categoryName}</strong>. 
+          At E Lanka world International, we supply high-precision equipment designed for the evolving 
+          Sri Lankan manufacturing sector.
+        </p>
+
+        <div class="social-proof">
+          <a href={facebookUrl} target="_blank" class="soc-btn fb">Facebook Page</a>
+          <a href={youtubeUrl} target="_blank" class="soc-btn yt">Watch Demos</a>
+        </div>
+      </header>
+
+      <details class="category-explorer">
+        <summary>
+          <span>View All Machinery Categories</span>
+          <span class="icon">▼</span>
+        </summary>
+        <div class="category-list-wrapper">
+          {allCategories.map(cat => (
+            <a href={`/category/${cat.toLowerCase().replace(/\s+/g, '-')}`} class="cat-tag">
+              {cat}
+            </a>
+          ))}
+        </div>
+      </details>
+
+      <div class="product-grid">
+        {products.map(item => (
+          <div class="product-card">
+            <div class="img-container">
+               <img src={item.data.image} alt={`${item.data.title} - ${categoryName} Sri Lanka`} loading="lazy" />
+            </div>
+            <div class="card-info">
+              <h3>{item.data.title}</h3>
+              <p class="price">{item.data.offerPrice || item.data.price}</p>
+              <a href={`/products/${item.id}`} class="btn">View Specifications</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <section class="trust-block">
+        <h2>Why Source {categoryName} From Us?</h2>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h4>Local Warranty & Service</h4>
+            <p>Every machine comes with a local service warranty and technical support right here in Sri Lanka.</p>
+          </div>
+          <div class="trust-card">
+            <h4>Island-wide Delivery</h4>
+            <p>Fast and secure shipping to Colombo, Gampaha, Kandy, and all other major districts.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .category-page { padding: 40px 0 80px; background-color: #fcfcfc; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  /* Breadcrumbs */
+  .breadcrumbs { font-size: 0.9rem; margin-bottom: 25px; color: #666; }
+  .breadcrumbs a { text-decoration: none; color: #001f3f; font-weight: 500; }
+  .breadcrumbs span { margin: 0 8px; color: #ccc; }
+  .breadcrumbs .current { color: #888; }
+
+  /* Header Section */
+  .cat-header { margin-bottom: 40px; }
+  .cat-header h1 { color: #001f3f; font-size: 2.8rem; margin-bottom: 15px; }
+  /* Update this rule */
+.cat-header h1 { 
+  color: #059669; /* This makes the whole row green */
+  font-size: 2.8rem; 
+  margin-bottom: 15px; 
+}
+  .intro-text { max-width: 850px; line-height: 1.7; color: #4b5563; font-size: 1.1rem; }
+
+  /* Social Buttons */
+  .social-proof { display: flex; gap: 12px; margin-top: 20px; }
+  .soc-btn { padding: 8px 18px; border-radius: 50px; text-decoration: none; color: white; font-size: 0.85rem; font-weight: bold; transition: opacity 0.2s; }
+  .fb { background: #1877F2; }
+  .yt { background: #FF0000; }
+
+  /* Expandable Category Explorer */
+  .category-explorer { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin-bottom: 50px; overflow: hidden; }
+  .category-explorer summary { padding: 18px; cursor: pointer; font-weight: 700; color: #374151; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .category-list-wrapper { padding: 20px; display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid #f3f4f6; background: #f9fafb; }
+  .cat-tag { background: white; border: 1px solid #d1d5db; padding: 6px 14px; border-radius: 6px; text-decoration: none; color: #4b5563; font-size: 0.85rem; }
+  .cat-tag:hover { background: #001f3f; color: white; border-color: #001f3f; }
+
+  /* Product Grid */
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+  .product-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; transition: transform 0.2s; display: flex; flex-direction: column; }
+  .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.08); }
+  .img-container { padding: 20px; background: #fff; }
+  .product-card img { width: 100%; height: 200px; object-fit: contain; }
+  .card-info { padding: 20px; flex-grow: 1; text-align: left; }
+  .product-card h3 { font-size: 1.15rem; color: #111827; margin-bottom: 12px; line-height: 1.4; height: 3.2rem; overflow: hidden; }
+  .price { color: #d946ef; font-weight: 800; font-size: 1.3rem; margin-bottom: 18px; }
+  .btn { display: block; background: #001f3f; color: white; padding: 12px; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; }
+
+  /* Trust Block */
+  .trust-block { margin-top: 80px; padding-top: 50px; border-top: 1px solid #eee; }
+  .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .trust-card { background: #f0fdf4; padding: 25px; border-radius: 12px; border: 1px solid #dcfce7; }
+  
+  @media (max-width: 768px) {
+    .trust-grid { grid-template-columns: 1fr; }
+  }
+</style>
