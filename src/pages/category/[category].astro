@@ -1,7 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -40,7 +38,7 @@ const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
-  <Header />
+
   
   <main class="category-page">
     <div class="container">
@@ -125,7 +123,6 @@ const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
     </div>
   </main>
   
-  <Footer />
 </Layout>
 
 <style>

@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
 // Fetch all products from the content collection
@@ -9,7 +7,6 @@ const allProducts = await getCollection('products');
 ---
 
 <Layout title="Machinery Shop | E Lanka World">
-  <Header />
   
   <main class="shop-container">
   <header class="shop-header">
@@ -70,7 +67,6 @@ const allProducts = await getCollection('products');
     </div>
   </main>
 
-  <Footer />
 </Layout>
 
 <style>

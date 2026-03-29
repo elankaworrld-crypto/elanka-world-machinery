@@ -1,12 +1,9 @@
 ---
-// Header.astro
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // removes the leading "/"
-
-// Logic to check if we are in the shop section (including product sub-pages)
-const isShopActive = currentPath === 'shop' || currentPath.startsWith('shop/') || currentPath.startsWith('products/');
-const isHomeActive = currentPath === '';
+const currentPath = pathname.slice(1);
+const isHomeActive = currentPath === '' || currentPath === '/';
 ---
+
 <header class="main-header">
     <div class="header-container">
         <div class="logo">
@@ -15,142 +12,153 @@ const isHomeActive = currentPath === '';
             </a>
         </div>
 
-        <nav class="nav-menu" id="navMenu">
-    <a href="/" class={`nav-link ${isHomeActive ? "active" : ""}`}>Home</a>
-    <a href="/shop" class={`nav-link ${isShopActive ? "active" : ""}`}>Shop</a>
-    <a href="https://wa.me/94776344758" class="nav-link contact-btn">Contact Us</a>
-</nav>
+        <div class="search-wrapper desktop-only">
+            <div id="search"></div>
+        </div>
 
-        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
+        <div class="nav-section">
+            <nav class="nav-menu" id="navMenu">
+                <a href="/" class={`nav-link ${isHomeActive ? "active" : ""}`}>Home</a>
+                <a href="/shop" class="nav-link">Shop</a>
+                <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
+            </nav>
+
+            <button class="hamburger mobile-only" id="hamburgerBtn" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-search-layer mobile-only">
+        <div id="search-mobile"></div>
     </div>
 </header>
 
-<script>
-    // This script handles the "Opening" and "Closing" of the menu on Mobile
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navMenu = document.getElementById('navMenu');
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" is:inline></script>
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+<script is:inline>
+  function initSearch() {
+    if (typeof PagefindUI !== 'undefined') {
+        new PagefindUI({ 
+            element: "#search", 
+            showSubResults: true,
+            translations: { placeholder: "Search machinery..." } 
+        });
+        new PagefindUI({ 
+            element: "#search-mobile", 
+            showSubResults: true,
+            translations: { placeholder: "Search..." } 
+        });
+    }
+  }
+  window.addEventListener('DOMContentLoaded', initSearch);
+
+  // FIXED HAMBURGER LOGIC
+  const hamburger = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  hamburger?.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+  });
 </script>
 
-<style>
-    .main-header {
-        background: #ffffff;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+
+<style is:global>
+  /* 1. GLOBAL LAYOUT - Prevents content from being hidden under the fixed header */
+  body {
+    padding-top: 80px; /* Adjust if your header height changes */
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding-top: 135px; /* More space for the extra mobile search layer */
     }
+  }
 
-    .header-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-    }
-
-    .brand-name { font-size: 1.5rem; font-weight: 800; color: #001f3f; text-decoration: none; }
-    .blue-text { color: #2563eb; }
-    .logo a { text-decoration: none; }
-
-    .nav-menu { display: flex; gap: 2rem; align-items: center; }
+  /* 2. HEADER CONTAINER */
+  .main-header { 
+    background: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+  }
     
-    .nav-link {
-        text-decoration: none;
-        color: #1e293b;
-        font-weight: 600;
-        transition: color 0.3s;
-    }
-    .nav-link:hover { color: #2563eb; }
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 20px;
+  }
 
-    .contact-btn {
-        background: #001f3f;
-        color: white;
-        padding: 0.6rem 1.2rem;
-        border-radius: 5px;
-    }
-    .contact-btn:hover { background: #2563eb; color: white; }
+  /* 3. BRANDING */
+  .brand-name { font-size: 1.4rem; font-weight: 800; color: #001f3f; text-decoration: none; }
+  .blue-text { color: #2563eb; }
 
-    /* Hamburger Button Styles */
-    .hamburger {
-        display: none;
-        cursor: pointer;
-        background: none;
-        border: none;
-        padding: 10px;
-    }
-
-    .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background-color: #001f3f;
-    }
-
-    /* Mobile Responsive Logic */
-    @media (max-width: 768px) {
-        .hamburger { display: block; }
-
-        /* The menu starts hidden off the side of the screen */
-        .nav-menu {
-            position: fixed;
-            left: -100%;
-            top: 70px;
-            flex-direction: column;
-            background-color: #ffffff;
-            width: 100%;
-            text-align: center;
-            transition: 0.3s;
-            box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-            padding: 2rem 0;
-            gap: 1.5rem;
-        }
-
-        /* When the 'active' class is added via JavaScript, it slides in */
-        .nav-menu.active { left: 0; }
-
-        /* Animation for the Hamburger icon into an 'X' */
-        .hamburger.active .bar:nth-child(2) { opacity: 0; }
-        .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    }
-
-    /* The Active Red Underline */
-    .nav-link {
-        position: relative;
-        padding: 5px 0;
-    }
-
-    .nav-link.active {
-        color: #dc2626; /* Professional Red */
-    }
-
-    .nav-link.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -5px; /* Adjust this to move the line up or down */
-        width: 100%;
-        height: 3px;
-        background-color: #dc2626;
-        border-radius: 2px;
-    }
-
-    /* Update hover to match red theme */
-    .nav-link:hover {
-        color: #dc2626;
-    }
+  /* 4. DESKTOP SEARCH & NAVIGATION */
+  .search-wrapper { flex: 0 1 450px; margin: 0 1.5rem; }
+  .nav-section { display: flex; align-items: center; }
+  .nav-menu { display: flex; gap: 1.5rem; align-items: center; }
     
+  .nav-link { text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.95rem; }
+  .nav-link.active { color: #dc2626; border-bottom: 2px solid #dc2626; }
+  .contact-btn { background: #001f3f; color: #fff; padding: 0.5rem 1.2rem; border-radius: 5px; text-decoration: none; font-weight: 600; }
+
+  /* 5. MOBILE SEARCH LAYER */
+  .mobile-search-layer {
+    background: #f8fafc;
+    padding: 10px 20px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  /* 6. HAMBURGER ICON */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .bar { width: 30px; height: 3px; background-color: #001f3f; border-radius: 10px; transition: 0.3s; }
+
+  /* 7. VISIBILITY & RESPONSIVE LOGIC */
+  .desktop-only { display: block; }
+  .mobile-only { display: none; }
+
+  @media (max-width: 768px) {
+    .desktop-only { display: none; }
+    .mobile-only { display: flex; }
+    .hamburger { display: flex; }
+
+    /* Mobile Menu Drawer */
+    .nav-menu {
+      display: none;
+      position: fixed; /* Stays fixed relative to viewport */
+      top: 135px;      /* Starts exactly where the mobile search bar ends */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 135px);
+      background: white;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+
+    .nav-menu.active { display: flex; }
+    .nav-link { font-size: 1.2rem; padding: 1rem 0; border-bottom: 1px solid #f1f5f9; width: 100%; }
+  }
 </style>
