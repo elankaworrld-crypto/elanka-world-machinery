@@ -206,32 +206,56 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
   .tab-content :global(ul) { padding-left: 20px; }
   .tab-content :global(li) { margin-bottom: 10px; }
 
-  /* --- CORRECTED RESPONSIVE SECTION --- */
+  /* --- FINAL COMBINED RESPONSIVE SECTION --- */
   @media (max-width: 768px) {
-    .container {
+    /* 1. Prevent any side-scrolling or footer gaps */
+    body, html {
+      overflow-x: hidden;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 2. Force the page and container to be edge-to-edge */
+    .product-page, main, .container {
       padding: 0 !important; 
       width: 100% !important;
       max-width: 100% !important;
+      overflow-x: hidden;
+      margin-top: 135px; /* Keeps the header clearance */
     }
 
+    /* 3. Make the product box hit the screen edges */
     .product-top-grid, .product-details-extra {
       margin: 0 !important;
       grid-template-columns: 1fr;
       padding: 15px;
       gap: 30px;
-      border-radius: 0; 
+      border-radius: 0 !important; 
       box-shadow: none; 
-      width: 100%;
+      width: 100% !important;
     }
 
+    /* 4. Fix the Footer alignment */
+    footer, :global(footer) {
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    /* 5. Keep text readable (not touching the glass) */
     .breadcrumb, .category-tags, h1, .price-box, .short-description, .actions {
       padding-left: 15px;
       padding-right: 15px;
     }
 
-    .main-display img { 
-      height: 300px; 
-    }
+    /* 6. Mobile specific sizing */
+    .main-display img { height: 300px; }
+    h1 { font-size: 1.6rem; margin-top: 5px; }
+    .current-price { font-size: 1.6rem; }
+    .short-description { font-size: 1rem; }
+  } 
+
 
     h1 { 
       font-size: 1.6rem; 
