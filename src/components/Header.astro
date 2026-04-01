@@ -16,8 +16,8 @@ const isHomeActive = currentPath === '' || currentPath === '/';
         </div>
 
         <div class="search-wrapper desktop-only">
-            <div id="search"></div>
-        </div>
+    <div id="search"></div>
+</div>
 
         <div class="nav-section">
             <nav class="nav-menu" id="navMenu">
@@ -35,8 +35,8 @@ const isHomeActive = currentPath === '' || currentPath === '/';
     </div>
 
     <div class="mobile-search-layer mobile-only">
-        <div id="search-mobile"></div>
-    </div>
+    <div id="search-mobile"></div>
+</div>
 </header>
 
 <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
@@ -66,6 +66,28 @@ const isHomeActive = currentPath === '' || currentPath === '/';
   hamburger?.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
+  });
+
+  // Listen for clicks on the search results area
+  document.addEventListener('click', (e) => {
+    // Check if the user clicked the search results "drawer"
+    const drawer = e.target.closest('.pagefind-ui__drawer');
+    if (drawer) {
+      const rect = drawer.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+
+      // Logic: If user clicks the top-right corner (50px area)
+      if (clickX > (rect.width - 50) && clickY < 50) {
+        const allInputs = document.querySelectorAll('.pagefind-ui__search-input');
+        allInputs.forEach(input => {
+          input.value = '';
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        const allClears = document.querySelectorAll('.pagefind-ui__search-clear');
+        allClears.forEach(clear => clear.click());
+      }
+    }
   });
 </script>
 
@@ -191,5 +213,34 @@ const isHomeActive = currentPath === '' || currentPath === '/';
 
     .nav-menu.active { display: flex; }
     .nav-link { font-size: 1.2rem; padding: 1rem 0; border-bottom: 1px solid #f1f5f9; width: 100%; }
+  }
+
+  /* This puts the X inside the search results drawer automatically */
+  .pagefind-ui__drawer {
+    position: relative !important;
+  }
+
+  .pagefind-ui__drawer::before {
+    content: "✕";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #dc2626; /* Your Red */
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    background: white;
+    padding: 5px;
+    line-height: 1;
+  }
+
+  /* Mobile adjustment for the results X */
+  @media (max-width: 768px) {
+    .pagefind-ui__drawer::before {
+      top: 10px;
+      right: 10px;
+      font-size: 26px; /* Bigger for thumbs on mobile */
+    }
   }
 </style>
