@@ -1,7 +1,12 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
-const isHomeActive = currentPath === '' || currentPath === '/';
+// This creates a helper function to check if a link is active
+const isActive = (path) => {
+  if (path === '/') {
+    return pathname === '/' || pathname === '';
+  }
+  return pathname.startsWith(path);
+};
 ---
 
 <header class="main-header">
@@ -21,10 +26,10 @@ const isHomeActive = currentPath === '' || currentPath === '/';
 
         <div class="nav-section">
             <nav class="nav-menu" id="navMenu">
-                <a href="/" class={`nav-link ${isHomeActive ? "active" : ""}`}>Home</a>
-                <a href="/shop" class="nav-link">Shop</a>
-                <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
-            </nav>
+    <a href="/" class={`nav-link ${isActive('/') ? "active" : ""}`}>Home</a>
+    <a href="/shop" class={`nav-link ${isActive('/shop') ? "active" : ""}`}>Shop</a>
+    <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
+</nav>
 
             <button class="hamburger mobile-only" id="hamburgerBtn" aria-label="Menu">
                 <span class="bar"></span>
@@ -242,5 +247,25 @@ const isHomeActive = currentPath === '' || currentPath === '/';
       right: 10px;
       font-size: 26px; /* Bigger for thumbs on mobile */
     }
+  }
+
+  /* When the hamburger is ACTIVE (Menu is open) */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #dc2626; /* Turn Red */
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0; /* Hide the middle bar */
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #dc2626; /* Turn Red */
+  }
+
+  /* Smooth transition for the animation */
+  .bar {
+    transition: 0.3s ease-in-out;
   }
 </style>
