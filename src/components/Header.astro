@@ -7,8 +7,11 @@ const isHomeActive = currentPath === '' || currentPath === '/';
 <header class="main-header">
     <div class="header-container">
         <div class="logo">
-            <a href="/">
-                <span class="brand-name">E Lanka <span class="blue-text">World</span></span>
+            <a href="/" style="text-decoration: none;">
+                <div class="brand-container">
+                    <span class="brand-name">E LANKA <span class="blue-text">WORLD</span></span>
+                    <span class="intl-text">INTERNATIONAL</span>
+                </div>
             </a>
         </div>
 
@@ -99,9 +102,37 @@ const isHomeActive = currentPath === '' || currentPath === '/';
     padding: 0.8rem 20px;
   }
 
-  /* 3. BRANDING */
-  .brand-name { font-size: 1.4rem; font-weight: 800; color: #001f3f; text-decoration: none; }
+  /* 3. BRANDING - UPDATED */
+  .brand-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .brand-name { 
+    font-size: 1.3rem; 
+    font-weight: 900; 
+    color: #001f3f; 
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+
+  .intl-text {
+    font-size: 0.55rem;
+    font-weight: 600;
+    color: #64748b;
+    letter-spacing: 3.8px;
+    margin-top: 2px;
+    text-transform: uppercase;
+  }
+
   .blue-text { color: #2563eb; }
+
+  /* FIX: Prevents logo from squashing search bar */
+  .logo {
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
 
   /* 4. DESKTOP SEARCH & NAVIGATION */
   .search-wrapper { flex: 0 1 450px; margin: 0 1.5rem; }
