@@ -107,7 +107,18 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
 </Layout>
 
 <style>
-  .product-page { padding: 40px 0; background-color: #f9fafb; }
+  .product-page { 
+    padding: 20px 0; 
+    background-color: #f9fafb; 
+    margin-top: 80px; 
+  }
+
+  @media (max-width: 768px) {
+    .product-page {
+      margin-top: 135px;
+    }
+  }
+
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
   
   /* Breadcrumb */
@@ -153,7 +164,7 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
   .price-box { margin-bottom: 25px; display: flex; align-items: baseline; gap: 15px; flex-wrap: wrap; }
   .old-price { font-size: 1.2rem; color: #9ca3af; text-decoration: line-through; }
   .current-price { font-size: 2rem; font-weight: 800; color: #111827; }
-  .current-price.sale { color: #d946ef; } /* Vibrant pink for offers */
+  .current-price.sale { color: #d946ef; } 
   .tax-tag { font-size: 0.8rem; background: #ecfdf5; color: #065f46; padding: 4px 8px; border-radius: 4px; }
 
   .short-description { 
@@ -195,10 +206,47 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
   .tab-content :global(ul) { padding-left: 20px; }
   .tab-content :global(li) { margin-bottom: 10px; }
 
-  /* Responsive */
-  @media (max-width: 968px) {
-    .product-top-grid { grid-template-columns: 1fr; padding: 20px; }
-    h1 { font-size: 1.8rem; }
-    .main-display img { height: 350px; }
-  }
+  /* --- CORRECTED RESPONSIVE SECTION --- */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0; 
+    }
+
+    .product-top-grid, .product-details-extra {
+      grid-template-columns: 1fr;
+      padding: 15px;
+      gap: 30px;
+      border-radius: 0; 
+      box-shadow: none; 
+      width: 100%;
+    }
+
+    .breadcrumb, .category-tags, h1, .price-box, .short-description, .actions {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .main-display img { 
+      height: 300px; 
+    }
+
+    h1 { 
+      font-size: 1.6rem; 
+      margin-top: 5px;
+    }
+
+    .current-price {
+      font-size: 1.6rem;
+    }
+
+    .short-description {
+      font-size: 1rem;
+      padding-left: 15px;
+    }
+
+    .product-details-extra {
+      padding: 20px; 
+    }
+  } /* This closing bracket should be at the very end of all mobile styles */
 </style>
+
