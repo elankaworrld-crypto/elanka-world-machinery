@@ -209,10 +209,13 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
   /* --- CORRECTED RESPONSIVE SECTION --- */
   @media (max-width: 768px) {
     .container {
-      padding: 0; 
+      padding: 0 !important; 
+      width: 100% !important;
+      max-width: 100% !important;
     }
 
     .product-top-grid, .product-details-extra {
+      margin: 0 !important;
       grid-template-columns: 1fr;
       padding: 15px;
       gap: 30px;
