@@ -33,6 +33,26 @@ const seoDescription = `Looking for the best ${categoryName} in Sri Lanka? E Lan
 
 const facebookUrl = "https://www.facebook.com/CodingMachineSriLanka/";
 const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
+
+// This is truly universal. It works for 1 or 1,000 categories.
+const currentContent = {
+  guide: `High-performance ${categoryName} solutions are critical for maintaining production standards in the Sri Lankan industrial sector. Our range of ${categoryName} is specifically selected to provide durability, precision, and ease of use for local manufacturers, from small-scale startups to large factories.`,
+  
+  faq: [
+    { 
+      q: `Do you provide technical support for ${categoryName} in Sri Lanka?`, 
+      a: `Yes, we offer full technical support, installation, and operator training for every ${categoryName} we supply. Our service team covers Colombo, Gampaha, and all major industrial zones.` 
+    },
+    { 
+      q: `What are the power requirements for this ${categoryName}?`, 
+      a: `Most of our ${categoryName} units are designed for standard Sri Lankan 230V single-phase power, making them easy to integrate into your existing production line.` 
+    },
+    { 
+      q: `Are spare parts available for ${categoryName}?`, 
+      a: `We maintain a comprehensive stock of essential spare parts and consumables for all ${categoryName} models to ensure your production never stops.` 
+    }
+  ]
+};
 ---
 
 
@@ -88,6 +108,26 @@ const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
       </details>
 
       <PriceFilter client:load initialProducts={products} categoryName={categoryName} />
+
+    <section class="seo-guide">
+  <h2>The Ultimate Guide to {categoryName} in Sri Lanka</h2>
+  <div class="guide-content">
+    <p>{currentContent.guide}</p>
+    <p>At E Lanka World International, we understand the local market requirements for <strong>{categoryName}</strong>, ensuring all equipment meets industrial safety and efficiency standards.</p>
+  </div>
+</section>
+
+<section class="faq-section">
+  <h2>{categoryName} Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    {currentContent.faq.map(item => (
+      <div class="faq-item">
+        <p class="faq-q"><strong>{item.q}</strong></p>
+        <p class="faq-a">{item.a}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
       <section class="trust-block">
   <h2>Why Source {categoryName} From Us?</h2>
@@ -383,4 +423,69 @@ const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
   color: #6b7280;
   font-style: italic;
 }
+
+/* SEO Guide: Added a soft shadow and better spacing */
+.seo-guide { 
+  margin: 60px 0; 
+  padding: 40px; 
+  background: #ffffff; 
+  border-radius: 16px; 
+  border: 1px solid #e5e7eb; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Match your category explorer shadow */
+}
+
+.seo-guide h2 { 
+  color: #001f3f; 
+  margin-bottom: 20px; 
+  font-size: 1.75rem; 
+  font-weight: 800; 
+  letter-spacing: -0.025em;
+}
+
+.seo-guide p { 
+  color: #4b5563; 
+  line-height: 1.8; 
+  font-size: 1.05rem; 
+}
+
+/* FAQ Section: Stronger visual hierarchy */
+.faq-section { margin-bottom: 80px; }
+
+.faq-section h2 {
+  color: #111827;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.faq-grid { 
+  display: grid; 
+  gap: 20px; 
+}
+
+/* FAQ Item: Matching your industrial green accent */
+.faq-item { 
+  background: #f9fafb; 
+  padding: 25px; 
+  border-radius: 12px; 
+  border-left: 5px solid #059669; /* Your brand green */
+  transition: transform 0.2s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(5px); /* Subtle interactive feel */
+}
+
+.faq-q { 
+  color: #111827; 
+  margin-bottom: 8px; 
+  font-size: 1.1rem; 
+}
+
+.faq-a { 
+  color: #4b5563; 
+  font-size: 1rem; 
+  line-height: 1.6;
+}
+
 </style>
