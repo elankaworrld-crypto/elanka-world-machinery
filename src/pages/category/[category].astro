@@ -107,7 +107,13 @@ const currentContent = {
         </div>
       </details>
 
-      <PriceFilter client:load initialProducts={products} categoryName={categoryName} />
+<section class="machinery-filter">
+  <div class="filter-header">
+    <h3>Filter {categoryName} by Budget</h3>
+    <p>Use the slider below to find the right industrial solution for your price range.</p>
+  </div>
+  <PriceFilter client:load initialProducts={products} categoryName={categoryName} />
+</section>
 
     <section class="seo-guide">
   <h2>The Ultimate Guide to {categoryName} in Sri Lanka</h2>
@@ -641,6 +647,31 @@ html, body {
   .badge-number {
     font-size: 1.4rem; /* Makes text fit better on mobile */
   }
+}
+
+.machinery-filter {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px 0 40px;
+  border: 1px solid #e5e7eb;
+}
+
+.filter-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #001f3f;
+}
+
+.filter-header p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* And still hide the extra input */
+.machinery-filter input[type="text"] {
+  display: none !important;
 }
 
 </style>
