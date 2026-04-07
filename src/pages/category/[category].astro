@@ -144,6 +144,35 @@ const currentContent = {
 </section>
 
     </div>
+
+    <section class="company-trust-footer">
+  <div class="trust-content">
+    <div class="trust-text">
+      <h2>About E Lanka World International</h2>
+      <p>
+        Since our inception, <strong>E Lanka World International</strong> has been a cornerstone in the Sri Lankan manufacturing landscape. 
+        We specialize in importing high-performance industrial packaging and coding machinery directly from top-tier manufacturers.
+      </p>
+      <ul class="trust-points">
+        <li>✅ <strong>Direct Importer:</strong> No middle-men, ensuring the best prices in Sri Lanka.</li>
+        <li>✅ <strong>Expert Technical Team:</strong> On-site installation and maintenance support.</li>
+        <li>✅ <strong>Ready Stock:</strong> We maintain a local warehouse for quick delivery and spare parts.</li>
+      </ul>
+      <a href="/about" class="btn-about">Learn More About Our Journey</a>
+    </div>
+    <div class="trust-badge-container">
+      <div class="badge">
+        <span class="badge-number">100%</span>
+        <span class="badge-label">Genuine Parts</span>
+      </div>
+      <div class="badge">
+        <span class="badge-number">Local</span>
+        <span class="badge-label">Service Warranty</span>
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
 </Layout>
 
@@ -486,6 +515,101 @@ const currentContent = {
   color: #4b5563; 
   font-size: 1rem; 
   line-height: 1.6;
+}
+
+
+.company-trust-footer {
+  margin-top: 80px;
+  padding: 60px 0;
+  background-color: #001f3f; /* Deep Navy - represents stability and trust */
+  color: white;
+  border-radius: 20px;
+}
+
+.trust-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.trust-text h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.trust-text p {
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+}
+
+.trust-points {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.trust-points li {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.btn-about {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #059669; /* Your brand green */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.btn-about:hover {
+  background: #047857;
+}
+
+/* Trust Badges */
+.trust-badge-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 180px;
+}
+
+.badge-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #059669;
+}
+
+.badge-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .trust-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .trust-badge-container {
+    flex-direction: row;
+  }
 }
 
 </style>
