@@ -12,8 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^5.1.1",
     "astro": "^6.0.6",
-    "astro-pagefind": "^1.8.5"
+    "astro-pagefind": "^1.8.5",
+    "preact": "^10.29.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",

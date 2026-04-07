@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// SEO Optimized Title
+const seoTitle = "Machinery For Sale in Sri Lanka | E Lanka World International";
+---
+
+<Layout title={seoTitle}>
+  <main class="machinery-landing">
+    <div class="container">
+      
+      <header class="page-header">
+        <h1>Machinery For Sale in Sri Lanka</h1>
+        <h2>From E Lanka World International</h2>
+        
+        <div class="content-card">
+          <p class="main-text">
+            We are <strong>E Lanka World International</strong>, We sell all types of packaging & processing Machinery in Sri Lanka, 
+            With unmatched quality, unbeatable price and exceptional after sales service. 
+          </p>
+          
+          <p class="sub-text">
+            Below are some of the many category of our machinery if you rather wish to contact us directly 
+            click on the click to whatsapp button and message us or else proceed to explore our categories below.
+          </p>
+          
+          <div class="cta-wrapper">
+            <a 
+              href="https://wa.me/94776344758?text=Hi, I am interested in your machinery. Please send more details." 
+              class="whatsapp-btn"
+            >
+              <img src="/whatsapp-icon.svg" alt="" width="25" height="25" />
+              Inquire via WhatsApp
+            </a>
+            <p class="hotline">Direct Hotline: <strong>0776344758</strong></p>
+          </div>
+        </div>
+      </header>
+
+      <section class="category-notice">
+        <p>Our machine categories are being updated. Contact us for the latest inventory.</p>
+      </section>
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .machinery-landing { 
+    padding: 60px 0; 
+    background-color: #f9fafb; 
+    margin-top: 60px; /* Matched to your new tighter gap */
+    min-height: 80vh;
+  }
+  
+  .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+  .page-header { text-align: center; }
+  
+  h1 { font-size: 2.8rem; color: #001f3f; margin-bottom: 10px; font-weight: 900; }
+  h2 { font-size: 1.6rem; color: #2563eb; margin-bottom: 40px; font-weight: 700; }
+  
+  .content-card { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 4px solid #001f3f;
+    text-align: left;
+  }
+
+  .main-text { 
+    font-size: 1.4rem; 
+    line-height: 1.6; 
+    color: #111827; 
+    margin-bottom: 20px; 
+    font-weight: 500;
+  }
+
+  .sub-text { 
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    color: #4b5563; 
+    margin-bottom: 35px;
+  }
+
+  .cta-wrapper { text-align: center; border-top: 1px solid #f1f5f9; padding-top: 30px; }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .whatsapp-btn:hover { background: #128c7e; transform: scale(1.02); }
+  
+  .hotline { margin-top: 15px; color: #6b7280; font-size: 0.9rem; }
+
+  .category-notice { text-align: center; margin-top: 40px; color: #9ca3af; font-style: italic; }
+
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .machinery-landing { margin-top: 110px; padding: 40px 15px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.3rem; }
+    .content-card { padding: 25px; }
+    .main-text { font-size: 1.2rem; }
+    .whatsapp-btn { width: 100%; justify-content: center; }
+  }
+</style>

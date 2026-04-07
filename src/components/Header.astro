@@ -27,6 +27,7 @@ const isActive = (path) => {
         <div class="nav-section">
             <nav class="nav-menu" id="navMenu">
     <a href="/" class={`nav-link ${isActive('/') ? "active" : ""}`}>Home</a>
+    <a href="/machinery" class={`nav-link ${isActive('/machinery') ? "active" : ""}`}>Our Machinery</a>
     <a href="/shop" class={`nav-link ${isActive('/shop') ? "active" : ""}`}>Shop</a>
     <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
 </nav>
@@ -268,4 +269,15 @@ const isActive = (path) => {
   .bar {
     transition: 0.3s ease-in-out;
   }
+
+  /* Highlights the Machinery link specifically for Ad traffic */
+  .nav-menu a[href="/machinery"] {
+    color: #2563eb; /* Matches your "WORLD" blue text */
+  }
+
+  /* Keeps the red active state if the user is actually on the page */
+  .nav-menu a[href="/machinery"].active {
+    color: #dc2626; 
+  }
+  
 </style>
