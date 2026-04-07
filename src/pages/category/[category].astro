@@ -28,14 +28,28 @@ export async function getStaticPaths() {
 
 const { categoryName, products, allCategories = [] } = Astro.props;
 
-const seoTitle = `${categoryName} in Sri Lanka | Industrial Grade | E Lanka World`;
-const seoDescription = `High-quality ${categoryName} for industrial and small business use in Sri Lanka. Professional packaging solutions with local warranty.`;
+const seoTitle = `${categoryName} in Sri Lanka | Industrial ${categoryName} Prices`;
+const seoDescription = `Looking for the best ${categoryName} in Sri Lanka? E Lanka World offers high-performance ${categoryName} with local warranty, island-wide delivery, and expert support for Sri Lankan industries.`;
 
 const facebookUrl = "https://www.facebook.com/CodingMachineSriLanka/";
 const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
 ---
 
+
 <Layout title={seoTitle} description={seoDescription}>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${categoryName} - Industrial Machinery Sri Lanka`,
+    "description": seoDescription,
+    "publisher": {
+      "@type": "Organization",
+      "name": "E Lanka World International",
+      "areaServed": "Sri Lanka"
+    }
+  })} />
+
   <main class="category-page">
     <div class="container">
       
@@ -76,18 +90,18 @@ const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
       <PriceFilter client:load initialProducts={products} categoryName={categoryName} />
 
       <section class="trust-block">
-        <h2>Why Source {categoryName} From Us?</h2>
-        <div class="trust-grid">
-          <div class="trust-card">
-            <h4>Local Warranty & Service</h4>
-            <p>Every machine comes with a local service warranty and technical support right here in Sri Lanka.</p>
-          </div>
-          <div class="trust-card">
-            <h4>Island-wide Delivery</h4>
-            <p>Fast and secure shipping to Colombo, Gampaha, Kandy, and all other major districts.</p>
-          </div>
-        </div>
-      </section>
+  <h2>Why Source {categoryName} From Us?</h2>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <h4>Local Sri Lankan Warranty</h4>
+      <p>We provide full technical support and spare parts for {categoryName} across Colombo, Kandy, and Gampaha.</p>
+    </div>
+    <div class="trust-card">
+      <h4>Fast Island-wide Shipping</h4>
+      <p>Get your {categoryName} delivered safely to your factory anywhere in Sri Lanka within 2-4 business days.</p>
+    </div>
+  </div>
+</section>
 
     </div>
   </main>
