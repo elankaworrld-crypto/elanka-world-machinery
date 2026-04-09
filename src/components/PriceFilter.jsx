@@ -19,13 +19,10 @@ export default function PriceFilter({ initialProducts, categoryName }) {
   return (
     <>
       <div class="price-filter-box">
-        <div class="range-labels">
-           <span>Min: Rs. {minPrice.toLocaleString()}</span>
-           <span>Max: Rs. {maxPrice.toLocaleString()}</span>
-        </div>
         <label class="current-filter-label">
-          Show machines up to: <strong>Rs. {currentMax.toLocaleString()}</strong>
+          Show {categoryName} up to: <strong>Rs. {currentMax.toLocaleString()}</strong>
         </label>
+        
         <input 
           type="range" 
           min={minPrice} 
@@ -35,6 +32,11 @@ export default function PriceFilter({ initialProducts, categoryName }) {
           onInput={(e) => setCurrentMax(parseInt(e.target.value))}
           class="price-range-input"
         />
+
+        <div class="range-labels">
+           <span>Min: Rs. {minPrice.toLocaleString()}</span>
+           <span>Max: Rs. {maxPrice.toLocaleString()}</span>
+        </div>
       </div>
 
       <div class="product-grid">
@@ -48,15 +50,13 @@ export default function PriceFilter({ initialProducts, categoryName }) {
               <p class="price">{item.data.offerPrice || item.data.price}</p>
               
               <div class="card-actions">
-                <a href={`/products/${item.id}`} class="btn-learn">
-                  Learn More
-                </a>
+                <a href={`/products/${item.id}`} class="btn-learn">Learn More</a>
                 <a 
                   href={`https://wa.me/94776344758?text=I%20am%20interested%20in%20${encodeURIComponent(item.data.title)}`} 
                   target="_blank" 
                   class="btn-whatsapp"
                 >
-                  Inquire by WhatsApp
+                  WhatsApp Inquiry
                 </a>
               </div>
             </div>

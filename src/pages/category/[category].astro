@@ -184,16 +184,7 @@ const currentContent = {
 
 <style is:global>
 
-/* ADD THIS AT THE VERY TOP OF YOUR STYLE BLOCK */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
-}
 
-.category-page { 
-  overflow-x: hidden; 
-}
 
   /* I used is:global because these styles need to apply to the PriceFilter.jsx output */
   
@@ -672,6 +663,26 @@ html, body {
 /* And still hide the extra input */
 .machinery-filter input[type="text"] {
   display: none !important;
+}
+
+/* SURGERY: Total disappearance of the second search bar */
+
+/* 1. Target the Pagefind UI specifically if it's being injected into the filter section */
+.machinery-filter .pagefind-ui,
+.machinery-filter #search,
+.price-filter-box .pagefind-ui,
+.price-filter-box #search {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+}
+
+/* 2. Target any rogue inputs that aren't the price slider */
+.machinery-filter input:not([type="range"]) {
+    display: none !important;
 }
 
 </style>
