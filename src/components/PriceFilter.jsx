@@ -1,8 +1,9 @@
-import { useState, useMemo } from 'preact/hooks';
+import { useState, useMemo, useEffect } from 'preact/hooks';
 
 export default function PriceFilter({ initialProducts, categoryName }) {
   const productsWithPrices = useMemo(() => {
     return initialProducts.map(p => {
+      // Clean the price string to get only numbers
       const priceString = (p.data.offerPrice || p.data.price || "0").toString();
       const numericPrice = parseInt(priceString.replace(/\D/g, ''), 10);
       return { ...p, numericPrice };
@@ -12,7 +13,16 @@ export default function PriceFilter({ initialProducts, categoryName }) {
   const pricesOnly = productsWithPrices.map(p => p.numericPrice).filter(n => !isNaN(n));
   const minPrice = Math.min(...pricesOnly) || 0;
   const maxPrice = Math.max(...pricesOnly) || 100000;
+
+  // MICRO-FIX: Start with a high number, then sync in Step 2
   const [currentMax, setCurrentMax] = useState(maxPrice);
+
+  // MICRO-FIX: This ensures the slider handles the new Ribbon prices immediately
+  useEffect(() => {
+    if (isFinite(maxPrice)) {
+      setCurrentMax(maxPrice);
+    }
+  }, [maxPrice]);
 
   const filteredProducts = productsWithPrices.filter(p => p.numericPrice <= currentMax);
 
@@ -28,7 +38,8 @@ export default function PriceFilter({ initialProducts, categoryName }) {
           min={minPrice} 
           max={maxPrice} 
           value={currentMax} 
-          step={minPrice === maxPrice ? 0 : 500}
+          /* MICRO-FIX: If max price is low (like ribbons), use step 10. If high, use 500 */
+          step={maxPrice > 5000 ? 500 : 10}
           onInput={(e) => setCurrentMax(parseInt(e.target.value))}
           class="price-range-input"
         />
