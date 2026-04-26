@@ -5,9 +5,7 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const allProducts = await getCollection('products');
-  
-  const rawCategories = allProducts.flatMap(item => item.data.categories || []);
-  const uniqueCategories = [...new Set(rawCategories)].filter(Boolean);
+
 
   return uniqueCategories.map(cat => {
     const slug = cat.toLowerCase().trim().replace(/\s+/g, '-');
@@ -93,19 +91,6 @@ const currentContent = {
         </div>
       </header>
 
-      <details class="category-explorer">
-        <summary>
-          <span>View All Machinery Categories</span>
-          <span class="icon">▼</span>
-        </summary>
-        <div class="category-list-wrapper">
-          {allCategories.map(cat => (
-            <a href={`/category/${cat.toLowerCase().replace(/\s+/g, '-')}`} class="cat-tag">
-              {cat}
-            </a>
-          ))}
-        </div>
-      </details>
 
 <section class="machinery-filter">
   <div class="filter-header">
@@ -320,75 +305,6 @@ const currentContent = {
 .soc-btn:hover { 
   opacity: 0.9; 
   transform: scale(1.05); 
-}
-
-/* 1. The Main Container (The <details> element) */
-.category-explorer {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  margin: 30px 0 50px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-/* 2. The Header (The <summary> element) */
-.category-explorer summary {
-  padding: 16px 20px;
-  cursor: pointer;
-  font-weight: 700;
-  color: #001f3f; /* Professional Dark Blue */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none; /* Removes default arrow */
-  transition: background 0.2s;
-}
-
-.category-explorer summary:hover {
-  background-color: #f9fafb;
-}
-
-/* Custom Arrow Icon */
-.category-explorer summary::after {
-  content: '▼';
-  font-size: 0.8rem;
-  transition: transform 0.3s;
-}
-
-.category-explorer[open] summary::after {
-  transform: rotate(180deg);
-}
-
-/* 3. The Tag Cloud Wrapper */
-.category-list-wrapper {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  border-top: 1px solid #f3f4f6;
-  background-color: #fcfcfc;
-}
-
-/* 4. The Individual Tags */
-.cat-tag {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  padding: 8px 16px;
-  border-radius: 50px; /* Pill shape */
-  text-decoration: none;
-  color: #4b5563;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.cat-tag:hover {
-  background-color: #001f3f;
-  color: #ffffff !important;
-  border-color: #001f3f;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 
