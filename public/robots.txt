@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# The link to your sitemap helps Google find those 66 pages
 Sitemap: https://elanka.world/sitemap-index.xml
