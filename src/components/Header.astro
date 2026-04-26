@@ -50,7 +50,9 @@ const isActive = (path) => {
 
 <script is:inline>
   function initSearch() {
-    if (typeof PagefindUI !== 'undefined') {
+    // This 500ms timeout prevents the Desktop "Total Blocking Time" error
+    setTimeout(() => {
+      if (typeof PagefindUI !== 'undefined') {
         new PagefindUI({ 
             element: "#search", 
             showSubResults: true,
@@ -61,9 +63,12 @@ const isActive = (path) => {
             showSubResults: true,
             translations: { placeholder: "Search..." } 
         });
-    }
+      }
+    }, 500); 
   }
-  window.addEventListener('DOMContentLoaded', initSearch);
+  
+  // Changing 'DOMContentLoaded' to 'load' also helps performance
+  window.addEventListener('load', initSearch);
 
   // FIXED HAMBURGER LOGIC
   const hamburger = document.getElementById('hamburgerBtn');
