@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
 
+# Standard way to block AI bots if you want to (Optional)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
 # The link to your sitemap helps Google find those 66 pages
 Sitemap: https://elanka.world/sitemap-index.xml
