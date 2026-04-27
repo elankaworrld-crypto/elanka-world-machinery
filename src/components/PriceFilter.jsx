@@ -58,23 +58,24 @@ export default function PriceFilter({ initialProducts, categoryName }) {
               <p class="price">{item.data.offerPrice || item.data.price}</p>
               
               <div class="card-actions">
-                <a 
-                  href={`/products/${item.id}`} 
-                  class="btn-learn"
-                  aria-label={`View details and pricing for ${item.data.title}`}
-                >
-                  View {item.data.title.split(' ').slice(0, 2).join(' ')}...
-                </a>
-                
-                <a 
-                  href={`https://wa.me/94776344758?text=I%20am%20interested%20in%20${encodeURIComponent(item.data.title)}`} 
-                  target="_blank" 
-                  class="btn-whatsapp"
-                  aria-label={`Inquire about ${item.data.title} via WhatsApp`}
-                >
-                  WhatsApp Inquiry
-                </a>
-              </div>
+  <a 
+    href={`/products/${item.id}`} 
+    class="btn-learn"
+    aria-label={`View full details for ${item.data.title}`}
+  >
+    {/* This takes the first 20 characters and adds dots if it's longer */}
+    View {item.data.title.length > 20 ? item.data.title.substring(0, 20) + '...' : item.data.title}
+  </a>
+  
+  <a 
+    href={`https://wa.me/94776344758?text=I%20am%20interested%20in%20${encodeURIComponent(item.data.title)}`} 
+    target="_blank" 
+    class="btn-whatsapp"
+    aria-label={`Inquire about ${item.data.title} on WhatsApp`}
+  >
+    WhatsApp Inquiry
+  </a>
+</div>
             </div>
           </div>
         ))}
