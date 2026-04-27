@@ -26,14 +26,13 @@ export default function PriceFilter({ initialProducts, categoryName }) {
   return (
     <>
       <div class="price-filter-box">
-        {/* FIX 1: Use htmlFor to connect the label to the input ID */}
         <label htmlFor="price-slider" class="current-filter-label">
           Show {categoryName} up to: <strong>Rs. {currentMax.toLocaleString()}</strong>
         </label>
         
         <input 
           type="range" 
-          id="price-slider" // FIX 1: Added ID
+          id="price-slider" 
           min={minPrice} 
           max={maxPrice} 
           value={currentMax} 
@@ -52,7 +51,6 @@ export default function PriceFilter({ initialProducts, categoryName }) {
         {filteredProducts.map(item => (
           <div class="product-card" key={item.id}>
             <div class="img-container">
-               {/* Good: You already have alt text here! */}
                <img src={item.data.image} alt={item.data.title} loading="lazy" />
             </div>
             <div class="card-info">
@@ -60,20 +58,19 @@ export default function PriceFilter({ initialProducts, categoryName }) {
               <p class="price">{item.data.offerPrice || item.data.price}</p>
               
               <div class="card-actions">
-                {/* FIX 2: Descriptive Link for SEO/Accessibility */}
                 <a 
                   href={`/products/${item.id}`} 
                   class="btn-learn"
-                  aria-label={`Learn more about ${item.data.title}`}
+                  aria-label={`View details and pricing for ${item.data.title}`}
                 >
-                  Learn More
+                  View {item.data.title.split(' ').slice(0, 2).join(' ')}...
                 </a>
                 
                 <a 
                   href={`https://wa.me/94776344758?text=I%20am%20interested%20in%20${encodeURIComponent(item.data.title)}`} 
                   target="_blank" 
                   class="btn-whatsapp"
-                  aria-label={`Inquire about ${item.data.title} on WhatsApp`}
+                  aria-label={`Inquire about ${item.data.title} via WhatsApp`}
                 >
                   WhatsApp Inquiry
                 </a>
