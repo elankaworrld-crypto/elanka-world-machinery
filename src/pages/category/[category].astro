@@ -6,6 +6,10 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const allProducts = await getCollection('products');
 
+  // This defines the missing variable by pulling unique categories from your products
+  const uniqueCategories = [
+    ...new Set(allProducts.flatMap((item) => item.data.categories || []))
+  ];
 
   return uniqueCategories.map(cat => {
     const slug = cat.toLowerCase().trim().replace(/\s+/g, '-');
@@ -23,7 +27,6 @@ export async function getStaticPaths() {
     };
   });
 }
-
 const { categoryName, products, allCategories = [] } = Astro.props;
 
 const seoTitle = `${categoryName} in Sri Lanka | Industrial ${categoryName} Prices`;
@@ -86,9 +89,23 @@ const currentContent = {
         </p>
 
         <div class="social-proof">
-          <a href={facebookUrl} target="_blank" class="soc-btn fb">Facebook Page</a>
-          <a href={youtubeUrl} target="_blank" class="soc-btn yt">Watch Demos</a>
-        </div>
+  <a 
+    href={facebookUrl} 
+    target="_blank" 
+    class="soc-btn fb" 
+    aria-label={`Follow E Lanka World on Facebook for ${categoryName} updates`}
+  >
+    Facebook Page
+  </a>
+  <a 
+    href={youtubeUrl} 
+    target="_blank" 
+    class="soc-btn yt" 
+    aria-label={`Watch ${categoryName} demonstration videos on YouTube`}
+  >
+    Watch Demos
+  </a>
+</div>
       </header>
 
 
