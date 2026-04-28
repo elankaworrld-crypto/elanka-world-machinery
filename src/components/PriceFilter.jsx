@@ -59,13 +59,14 @@ export default function PriceFilter({ initialProducts, categoryName }) {
               
               <div class="card-actions">
   <a 
-    href={`/products/${item.id}`} 
-    class="btn-learn"
-    aria-label={`View full details for ${item.data.title}`}
-  >
-    {/* This takes the first 20 characters and adds dots if it's longer */}
-    View {item.data.title.length > 20 ? item.data.title.substring(0, 20) + '...' : item.data.title}
-  </a>
+  href={`/products/${item.id}`} 
+  class="btn-learn"
+  aria-label={`View full details for ${item.data.title}`}
+>
+  <span class="btn-text">
+    View {item.data.title.length > 18 ? item.data.title.substring(0, 18) + '...' : item.data.title}
+  </span>
+</a>
   
   <a 
     href={`https://wa.me/94776344758?text=I%20am%20interested%20in%20${encodeURIComponent(item.data.title)}`} 

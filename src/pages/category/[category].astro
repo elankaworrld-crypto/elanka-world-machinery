@@ -266,32 +266,75 @@ const currentContent = {
   .price { font-weight: 700; color: #059669; margin-bottom: 15px; font-size: 1.2rem; }
 
   /* --- BUTTONS --- */
-  .card-actions { 
-    margin-top: auto; /* Pushes buttons to the bottom of the card */
-    display: flex; 
-    flex-direction: column; 
-    gap: 8px; 
-  }
+  /* --- BUTTON CONTAINER --- */
+.card-actions { 
+  margin-top: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px;
+  width: 100%;
+  padding-top: 10px;
+}
 
-  .btn-learn, .btn-whatsapp { 
-    text-align: center; 
-    padding: 10px; 
-    border-radius: 6px; 
-    font-size: 0.85rem; 
-    font-weight: 600; 
-    text-decoration: none; 
-    color: white; 
-    transition: opacity 0.2s;
-  }
+/* --- THE UNIFORM BUTTON STYLE --- */
+.btn-learn, .btn-whatsapp { 
+  /* Centers text perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+  
+  /* Forces all buttons to be the exact same height */
+  height: 44px; 
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 8px; 
+  text-decoration: none; 
+  font-weight: 700;
+  
+  /* Shrinks font automatically on small screens */
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  
+  /* Keeps text on one line */
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
 
-  .btn-learn { background-color: #001f3f; } /* Dark Blue */
-  .btn-whatsapp { background-color: #25d366; } /* WhatsApp Green */
+/* Specific Colors */
+.btn-learn { 
+  background-color: #001f3f; 
+  color: white !important;
+}
 
-  .btn-learn:hover, .btn-whatsapp:hover { opacity: 0.9; }
+.btn-whatsapp { 
+  background-color: #25d366; 
+  color: white !important;
+}
 
-  /* Trust Block & UI */
-  .price-filter-box { background: #fff; border: 1px solid #e5e7eb; padding: 20px; border-radius: 12px; margin-bottom: 30px; }
-  .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;}
+/* Hover effects */
+.btn-learn:hover, .btn-whatsapp:hover { 
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* --- UI ELEMENTS (Price Box & Trust Grid) --- */
+.price-filter-box { 
+  background: #fff; 
+  border: 1px solid #e5e7eb; 
+  padding: 25px; 
+  border-radius: 12px; 
+  margin-bottom: 30px; 
+}
+
+.trust-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px; 
+  margin-top: 20px;
+}
+
   
   @media (max-width: 768px) {
     .trust-grid { grid-template-columns: 1fr; }
