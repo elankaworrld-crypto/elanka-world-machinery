@@ -61,10 +61,10 @@ export default function PriceFilter({ initialProducts, categoryName }) {
   <a 
   href={`/products/${item.id}`} 
   class="btn-learn"
-  aria-label={`View full details for ${item.data.title}`}
+  aria-label={`View details for ${item.data.title}`}
 >
   <span class="btn-text">
-    View {item.data.title.length > 18 ? item.data.title.substring(0, 18) + '...' : item.data.title}
+    View {item.data.title ? (item.data.title.substring(0, 15) + '...') : 'Details'}
   </span>
 </a>
   
@@ -74,7 +74,7 @@ export default function PriceFilter({ initialProducts, categoryName }) {
     class="btn-whatsapp"
     aria-label={`Inquire about ${item.data.title} on WhatsApp`}
   >
-    WhatsApp Inquiry
+    WhatsApp
   </a>
 </div>
             </div>

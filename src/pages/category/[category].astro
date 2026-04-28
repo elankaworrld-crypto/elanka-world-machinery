@@ -278,28 +278,36 @@ const currentContent = {
 
 /* --- THE UNIFORM BUTTON STYLE --- */
 .btn-learn, .btn-whatsapp { 
-  /* Centers text perfectly */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center; 
   
-  /* Forces all buttons to be the exact same height */
   height: 44px; 
   width: 100%;
-  padding: 0 10px;
+  padding: 0 5px; /* Reduced padding to give text more room */
   border-radius: 8px; 
   text-decoration: none; 
   font-weight: 700;
   
-  /* Shrinks font automatically on small screens */
-  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  /* Use a slightly smaller base for the clamp */
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
   
-  /* Keeps text on one line */
   white-space: nowrap;
   transition: all 0.2s ease;
   cursor: pointer;
   box-sizing: border-box;
+  
+  /* Ensure text is visible */
+  overflow: visible; 
+}
+
+/* Add this to ensure the span inside takes up space correctly */
+.btn-text {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Specific Colors */
