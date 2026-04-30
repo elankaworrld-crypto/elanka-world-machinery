@@ -7,7 +7,7 @@ images:
   - "/products/table-top-vacuum-sealer-sri-lanka.webp"
   - "/products/DZ260PD-vacuum-sealer-sri-lanka.webp"
 categories: ["Packaging Machinery", "Vacuum Sealers", "Sealing Solutions", "Sealing Machines"]
-price: "Contact for Price"
+price: "Rs. 145,000"
 offerPrice: ""
 ---
 
@@ -78,7 +78,7 @@ See how effectively this machine handles local products like dry fish to ensure 
 * **Bakery Chains**
 * **Local Food Exporters** (Dry fish, spices, and pulses)
 
-### Get a Quote Today
-Interested in the DZ260/PD Vacuum Sealer? 
+### Purchase & Delivery Information
+* **Price:** Rs. 145,000
 * **Location:** Deliveries available Islandwide in Sri Lanka.
-* **Contact:** Reach out to our team for the latest pricing and technical support.
+* **Support:** Full spare parts availability and technical guidance from the E Lanka World team.
