@@ -1,63 +1,91 @@
 ---
-title: "DBF-1000 Air Filling Band Sealer | Inbuilt Compressor Bakery Sealing Machine"
-shortDescription: "Industrial DBF-1000 band sealer with integrated air compressor. Ideal for pillow-pack sealing of buns and bakery items."
-description: "High-speed Air Filling Band Sealer for the Sri Lankan bakery industry. Features an inbuilt compressor for automatic air inflation and airtight sealing."
-image: "/products/DBF-1000-band-sealer.webp"
+title: "DZ260/PD Table Top Vacuum Sealer Machine | Best Price in Sri Lanka"
+shortDescription: "Industrial-grade table-top vacuum sealer for meat, seafood, and bakery products. Compact and powerful."
+description: "Professional DZ260/PD Vacuum Sealing Machine. The ultimate solution for Sri Lankan hotels, bakeries, and meat processors looking for airtight, long-lasting food preservation."
+image: "/products/table-top-vacuum-sealer-sri-lanka.webp"
 images:
-  - "/products/DBF-1000-band-sealer.webp"
-  - "/products/Air-filling-and-sealing-machine.webp"
-  - "/products/Gas-flushing-machine-in-sri-lanka.webp"
-categories: ["Packaging Machinery", "Band Sealers", "Gas Flushing Machines", "Air Flushing Band Sealer"]
-price: "Rs. 185,000"
+  - "/products/table-top-vacuum-sealer-sri-lanka.webp"
+  - "/products/DZ260PD-vacuum-sealer-sri-lanka.webp"
+  - "/products/sample-vacuum-sealing-image.webp"
+categories: ["Packaging Machinery", "Vacuum Sealers", "Sealing Solutions", "Sealing Machines"]
+price: "Rs. 145,000"
 offerPrice: ""
 ---
 
-## DBF-1000 Air Filling Band Sealer - Product Details
-The **DBF-1000** is a specialized **air filling band sealer** designed for the modern bakery. Unlike standard sealers, this unit features a **built-in air compressor**, eliminating the need for external air tanks or bulky hoses. 
+## DZ260/PD Table Top Vacuum Sealer - Product Overview
+The **DZ260/PD Vacuum Sealer** is a high-efficiency, industrial-grade machine designed for small to medium-scale businesses in Sri Lanka. Whether you are running a hotel kitchen, a meat processing unit, or a bakery, this machine ensures your products stay fresh up to 5x longer by removing all atmospheric oxygen.
 
-It is the perfect **bakery sealing machine** for products like buns, bread, and snacks that require a "pillow" of air inside the bag to protect the contents and provide a premium, high-volume appearance on retail shelves.
+Its compact table-top design makes it perfect for facilities with limited space without compromising on the heavy-duty vacuum pressure required for commercial use.
+
+### Watch the DZ260/PD in Action:
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/UAuC9ijj_kA" 
+    title="Industrial Table top Vacuum Sealer Sri Lanka" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+### Why the DZ260/PD is the Choice for Sri Lankan Businesses:
+* **Vacuum Sealer for Meat & Seafood:** Perfectly preserves the moisture and color of fresh meat and dry fish, preventing freezer burn.
+* **Vacuum Sealer for Bakery:** Keeps delicate pastries and bread fresh by creating an airtight barrier against humidity.
+* **Essential for Hotels:** Portions out food for sous-vide cooking or long-term storage, reducing food waste significantly.
 
 ### Machine Image Gallery
 <div class="product-images-grid">
   <img 
-    src="/products/DBF-1000-band-sealer.webp" 
-    alt="DBF-1000 Air Filling Band Sealer with integrated control panel and conveyor system." 
+    src="/products/table-top-vacuum-sealer-sri-lanka.webp" 
+    alt="Table Top Vacuum Sealer main view - Industrial quality for Sri Lankan businesses" 
     class="product-image-thumbnail"
   />
   <img 
-    src="/products/Air-filling-and-sealing-machine.webp" 
-    alt="Close up of the air inflation nozzle on the DBF-1000 bakery sealing machine." 
+    src="/products/DZ260PD-vacuum-sealer-sri-lanka.webp" 
+    alt="DZ260/PD Vacuum Sealing Machine side profile and control panel" 
     class="product-image-thumbnail"
   />
   <img 
-    src="/products/Gas-flushing-machine-in-sri-lanka.webp" 
-    alt="Side view showing the robust build of the DBF-1000 air flushing band sealer available in Sri Lanka." 
+    src="/products/sample-vacuum-sealing-image.webp" 
+    alt="Professional vacuum sealing sample for Sri Lankan food products" 
     class="product-image-thumbnail"
   />
 </div>
 
+### Demonstration: Vacuum Sealing Dry Fish
+See how effectively this machine handles local products like dry fish to ensure export-quality packaging.
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/Yo2yXRtsJAw" 
+    title="Dry Fish Vacuum Sealing Sri Lanka" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
 ### Key Technical Specifications:
-* **Model:** DBF-1000 (Air Filling Version)
-* **Compressor:** Integrated Inbuilt Air Compressor (No external air needed)
-* **Sealing Speed:** 0-12 meters per minute
-* **Sealing Width:** 10mm - 12mm
-* **Temperature Control:** Digital Constant Temperature (0-300°C)
-* **Max Load:** 5kg (Total conveyor load)
-* **Power:** 220V 50Hz (Standard Sri Lankan Power)
+* **Model:** DZ-260/PD
+* **Chamber Size:** 280 x 390 x 60 mm
+* **Sealing Length:** 260 mm (Single Sealing Bar)
+* **Cycle Time:** 10-20 Seconds (Adjustable)
+* **Material:** Food-Grade Stainless Steel Body
+* **Voltage:** 220V / 50Hz (Standard Sri Lanka)
+* **Pump Capacity:** High-power 10m³/h vacuum pump
 
-### Why the DBF-1000 is Perfect for Bakery Owners:
-* **Pillow-Pack Effect:** Fills pouches with clean, filtered air to prevent buns and pastries from being crushed.
-* **Space Saving:** The inbuilt compressor means you don't need a separate noisy air machine taking up floor space.
-* **Gas Flushing Capability:** Can also function as a general **gas flushing machine** if connected to specialized gas tanks.
-* **Industrial Build:** Designed for continuous daily use in high-output bakery environments.
+### Benefits of Using Our Vacuum Sealer:
+1. **Islandwide Delivery:** We ship to any location in Sri Lanka.
+2. **Superior Preservation:** Prevent oxidation and bacterial growth.
+3. **Professional Finish:** Give your products a high-end, factory-sealed look that increases retail value.
+4. **Durable Build:** Designed to withstand the high-humidity environment of Sri Lankan coastal areas.
 
-### Ideal Applications:
-* **Bakery Items:** Buns, sliced bread, donuts, and cream-filled pastries.
-* **Snack Foods:** Popcorn, extruded snacks, and light crackers.
-* **Protective Packaging:** Any item that needs an air cushion for safe transport.
+### Perfect For:
+* **Hotels & Restaurants** (Meal prepping and storage)
+* **Butcheries & Meat Shops**
+* **Bakery Chains**
+* **Local Food Exporters** (Dry fish, spices, and pulses)
 
-### Purchase & Support in Sri Lanka
-We offer this high-performance **air filling band sealer** with a focus on local reliability:
-* **Local Warranty:** Backed by our technical support team.
-* **Spare Parts:** Ready stock of heating blocks, teflon belts, and gears.
-* **Islandwide Delivery:** We deliver directly to your bakery or factory anywhere in Sri Lanka.
+### Purchase & Delivery Information
+* **Price:** Rs. 145,000
+* **Location:** Deliveries available Islandwide in Sri Lanka.
+* **Support:** Full spare parts availability and technical guidance from the E Lanka World team.
