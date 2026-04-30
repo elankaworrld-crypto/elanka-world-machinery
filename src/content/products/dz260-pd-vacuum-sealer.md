@@ -6,6 +6,7 @@ image: "/products/table-top-vacuum-sealer-sri-lanka.webp"
 images:
   - "/products/table-top-vacuum-sealer-sri-lanka.webp"
   - "/products/DZ260PD-vacuum-sealer-sri-lanka.webp"
+  - "/products/sample-vacuum-sealing-image.webp"
 categories: ["Packaging Machinery", "Vacuum Sealers", "Sealing Solutions", "Sealing Machines"]
 price: "Rs. 145,000"
 offerPrice: ""
@@ -31,19 +32,6 @@ Its compact table-top design makes it perfect for facilities with limited space 
 * **Vacuum Sealer for Meat & Seafood:** Perfectly preserves the moisture and color of fresh meat and dry fish, preventing freezer burn.
 * **Vacuum Sealer for Bakery:** Keeps delicate pastries and bread fresh by creating an airtight barrier against humidity.
 * **Essential for Hotels:** Portions out food for sous-vide cooking or long-term storage, reducing food waste significantly.
-
-<div class="product-images-grid">
-  <img 
-    src="/products/table-top-vacuum-sealer-sri-lanka.webp" 
-    alt="Table Top Vacuum Sealer main view - Industrial quality for Sri Lankan businesses" 
-    class="product-image-thumbnail"
-  />
-  <img 
-    src="/products/DZ260PD-vacuum-sealer-sri-lanka.webp" 
-    alt="DZ260/PD Vacuum Sealing Machine side profile and control panel" 
-    class="product-image-thumbnail"
-  />
-</div>
 
 ### Demonstration: Vacuum Sealing Dry Fish
 See how effectively this machine handles local products like dry fish to ensure export-quality packaging.

@@ -105,11 +105,22 @@ const {
 	@keyframes shadow-pulse { 0% { box-shadow: 0 0 0 0px rgba(5, 150, 105, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(5, 150, 105, 0); } 100% { box-shadow: 0 0 0 0px rgba(5, 150, 105, 0); } }
 	
 	@media (max-width: 768px) { 
-		.floating-contact { right: 20px; bottom: 80px; gap: 10px; } 
-		.float-btn { width: 50px; height: 50px; padding: 0; border-radius: 50%; } 
-		.btn-text { display: none; } 
-		.float-btn .icon, .float-btn img { margin: 0; font-size: 20px; } 
-	}
+    /* Use a double class or ID to increase specificity */
+    .floating-contact .float-btn { 
+        width: 55px !important; 
+        height: 55px !important; 
+        padding: 0 !important; 
+        border-radius: 50% !important; 
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    } 
+
+    /* Specifically target the text inside the floating buttons only */
+    .floating-contact .btn-text { 
+        display: none !important; 
+    } 
+}
 	
 	.float-btn:hover { transform: scale(1.1); }
 </style>
