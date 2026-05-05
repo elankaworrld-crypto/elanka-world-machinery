@@ -1,11 +1,13 @@
 ---
 title: "Professional Industrial Can Seaming Machine"
+shortDescription: "Heavy-duty 201 Stainless Steel can seamer for professional food and beverage packaging."
+description: "Industrial can seaming machine available in Sri Lanka. Durable stainless steel build for reliable airtight sealing of tin and aluminum cans."
 price: "Rs. 195,000"
 offerPrice: "195000"
-image: "/images/products/e-lanka-world-can-sealer.jpg"
+image: "/products/e-lanka-world-can-sealer.webp"
 images:
-  - "/images/products/e-lanka-world-can-sealer.jpg"
-  - "/images/products/can-seaming-machine-sri-lanka.jpg"
+  - "/products/e-lanka-world-can-sealer.webp"
+  - "/products/can-seaming-machine-sri-lanka.webp"
 categories: ["Packaging Machinery", "Sealing Machines", "can sealing machine", "tin sealing machine", "can seamer"]
 youtubeId: "7XBTHwnU0zw"
 features:

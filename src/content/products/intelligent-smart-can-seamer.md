@@ -1,11 +1,13 @@
 ---
 title: "Intelligent Smart Can Seamer"
+shortDescription: "Professional automatic electric can seamer for high-speed industrial packaging."
+description: "Buy the best intelligent smart can seamer in Sri Lanka. Automatic electric can sealing machine for PET, Tin, and Aluminum cans with local warranty."
 price: "Rs. 210,000"
 offerPrice: "210000"
-image: "/images/products/can-sealing-machine.jpg"
+image: "/products/can-sealing-machine.webp"
 images:
-  - "/images/products/can-sealing-machine-price-in-sri-lanka.jpg"
-  - "/images/products/can-sealing-machine-in-sri-lanka.jpg"
+  - "/products/can-sealing-machine-price-in-sri-lanka.webp"
+  - "/products/can-sealing-machine-in-sri-lanka.webp"
 categories: ["Packaging Machinery", "Sealing Machines", "can sealing machine", "tin sealing machine", "can seamer"]
 youtubeId: "e_NBO5i5PB4"
 features:
@@ -32,7 +34,7 @@ Whether you are in the heart of Colombo's beverage scene or running a food proce
 
 ### Advanced Technical Specifications
 
-This **tin sealing machine** is powered by a high-torque motor, yet remains surprisingly portable at just 36kg. Its compact dimensions ($220 \times 400 \times 600$ mm) allow it to fit into tight production spaces without sacrificing speed or power.
+This **tin sealing machine** is powered by a high-torque motor, yet remains surprisingly portable at just 36kg. Its compact dimensions (220 * 400 * 600 mm) allow it to fit into tight production spaces without sacrificing speed or power.
 
 | Feature | Specification |
 | :--- | :--- |

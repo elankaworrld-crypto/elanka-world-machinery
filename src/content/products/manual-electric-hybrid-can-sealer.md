@@ -1,12 +1,14 @@
 ---
 title: "Manual Electric Hybrid Can Sealer"
+shortDescription: "Affordable hybrid electric can sealer with manual lever control for small startups."
+description: "Most budget-friendly can sealing machine in Sri Lanka. Ideal for small manufacturers and vacuum sealing service providers."
 price: "Rs. 132,000"
 offerPrice: "132000"
-image: "/images/products/Manual-can-sealer-in-sri-lanka.jpg"
+image: "/products/Manual-can-sealer-in-sri-lanka.webp"
 images:
-  - "/images/products/Manual-can-sealer-in-sri-lanka.jpg"
-  - "/images/products/Manual-can seamer-in-sri-lanka.jpg"
-  - "/images/products/Manual-can-sealer-in-sri-lanka-backside-view.jpg"
+  - "/products/Manual-can-sealer-in-sri-lanka.webp"
+  - "/products/Manual-can seamer-in-sri-lanka.webp"
+  - "/products/Manual-can-sealer-in-sri-lanka-backside-view.webp"
 categories: ["Packaging Machinery", "Sealing Machines", "can sealing machine", "tin sealing machine", "can seamer"]
 youtubeId: "ZiaUbANPS3A"
 features:
@@ -26,9 +28,9 @@ This machine is a "hybrid" model: it uses a powerful electric motor to spin the 
 
 If you offer **vacuum sealing services** or boutique food packaging, this machine allows you to expand your offerings to include rigid cans without a massive capital investment. 
 
-* **Low Entry Cost:** At this **can sealing machine price in Sri Lanka**, you can achieve professional results with a very high return on investment.
-* **Precision Control:** The manual lever allows the operator to feel the seal, ensuring that even slightly irregular cans or lids are sealed perfectly every time.
-* **Versatile Capping:** Ideal for dry fruits, nuts, tea leaves, and spices that require a high-quality **tin sealing machine** finish to ensure shelf-life.
+*   **Low Entry Cost:** At this **can sealing machine price in Sri Lanka**, you can achieve professional results with a very high return on investment.
+*   **Precision Control:** The manual lever allows the operator to feel the seal, ensuring that even slightly irregular cans or lids are sealed perfectly every time.
+*   **Versatile Capping:** Ideal for dry fruits, nuts, tea leaves, and spices that require a high-quality **tin sealing machine** finish to ensure shelf-life.
 
 ### Watch the Hybrid Can Sealer in Action:
 [View the Demonstration Video](https://www.youtube.com/watch?v=ZiaUbANPS3A)
