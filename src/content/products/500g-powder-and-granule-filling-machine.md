@@ -2,10 +2,10 @@
 title: "500g Powder and Granule Weighing & Filling Machine"
 shortDescription: "High-capacity 5g-500g powder and granule filler with precision weighing. Professional industrial grade for Sri Lankan factories."
 description: "Industrial 500g powder and granule filling machine available in Sri Lanka. Precision digital weighing for large-scale packaging of rice, flour, and spices."
-image: "/images/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
+image: "/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
 images:
-  - "/images/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
-  - "/images/products/200g-powder-filling-machine-sri-lanka.jpg"
+  - "/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
+  - "/products/200g-powder-filling-machine-sri-lanka.jpg"
 categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule & Powder Filing Machines", "Filling Machines"]
 price: "Rs. 98,500"
 offerPrice: "98500"

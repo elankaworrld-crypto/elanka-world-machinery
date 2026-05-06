@@ -2,10 +2,10 @@
 title: "1kg Powder and Granule Weighing & Filling Machine"
 shortDescription: "Industrial-grade 10g-1000g powder and granule filler. High-speed precision weighing for bulk packaging in Sri Lanka."
 description: "Heavy-duty 1kg powder and granule filling machine for Sri Lankan manufacturers. Digital weighing system for 1000g packs of rice, flour, sugar, and grains."
-image: "/images/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
+image: "/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
 images:
-  - "/images/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
-  - "/images/products/200g-powder-filling-machine-sri-lanka.jpg"
+  - "/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
+  - "/products/200g-powder-filling-machine-sri-lanka.jpg"
 categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule & Powder Filing Machines", "Filling Machines"]
 price: "Rs. 185,000"
 offerPrice: "185000"
