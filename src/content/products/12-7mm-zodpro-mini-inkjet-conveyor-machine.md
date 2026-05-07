@@ -2,7 +2,7 @@
 title: "12.7mm Zodpro Mini Inkjet Conveyor Machine"
 shortDescription: "Professional automatic mini conveyor inkjet printer for high-speed date coding. Ideal for expiry date printing on bottles, boxes, and labels in Sri Lanka."
 description: "Buy the Zodpro 12.7mm mini conveyor coding machine in Sri Lanka. Automatic expiry date printing on glass, plastic, and cartons. High-speed, affordable industrial coding solution."
-price: "Rs. 145,000"
+price: "Rs. 175,000"
 offerPrice: "145000"
 brand: "Zodpro"
 image: "/products/mini-conveyor-coding-inkjet-machine-in-sri-lanka.webp"
