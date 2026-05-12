@@ -5,10 +5,10 @@ description: "Shop the best Round Bottle Semi-Automatic Labeling Machine in Sri 
 price: "Rs. 135,000"
 offerPrice: "105000"
 brand: "Atlas Lanka"
-image: "/products/semi-automatic-round-bottle-labeling-machine-sri-lanka.webp"
+image: "/products/round-bottle-labelling-machine-in-sri-lanka.webp"
 images:
-  - "/products/semi-automatic-round-bottle-labeling-machine-sri-lanka.webp"
-  - "/products/industrial-bottle-label-pasting-machine-for-sale.webp"
+  - "/products/round-bottle-labelling-machine-in-sri-lanka.webp"
+  - "/products/round-bottle-labelling-machine.webp"
 categories: ["Packaging Machinery", "Labelling Machines", "Bottle machinery"]
 youtubeId: "R3_nWbdu3es"
 features:
@@ -57,10 +57,10 @@ This labeling solution is versatile enough to handle a wide range of round objec
 
 By moving away from manual pasting to this semi-automatic system, your production line will benefit from:
 
-1.  **Professional Presentation:** Achieve a high-end look with bubbles-free and wrinkle-free label application.
-2.  **Scalable Output:** Significantly increase your daily packaging capacity with minimal effort.
-3.  **User-Friendly Interface:** Easy setup and quick adjustments for different bottle runs.
-4.  **Local Support:** Benefit from our expertise and maintenance services right here in Sri Lanka.
+1. **Professional Presentation:** Achieve a high-end look with bubbles-free and wrinkle-free label application.
+2. **Scalable Output:** Significantly increase your daily packaging capacity with minimal effort.
+3. **User-Friendly Interface:** Easy setup and quick adjustments for different bottle runs.
+4. **Local Support:** Benefit from our expertise and maintenance services right here in Sri Lanka.
 
 ### Service & Support
 We stand by our machinery to ensure your business never stops. With every purchase, we offer:
