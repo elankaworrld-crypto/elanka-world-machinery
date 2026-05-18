@@ -5,10 +5,10 @@ description: "Shop the best Round Bottle Semi-Automatic Labeling Machine in Sri 
 price: "Rs. 135,000"
 offerPrice: "105000"
 brand: "Atlas Lanka"
-image: "/products/round-bottle-labelling-machine-in-sri-lanka.webp"
+image: "/products/Round-bottle-labelling-machine-in-sri-lanka.webp"
 images:
-  - "/products/round-bottle-labelling-machine-in-sri-lanka.webp"
-  - "/products/round-bottle-labelling-machine.webp"
+  - "/products/Round-bottle-labelling-machine-in-sri-lanka.webp"
+  - "/products/Round-bottle-labelling-machine.webp"
 categories: ["Packaging Machinery", "Labelling Machines", "Bottle machinery"]
 youtubeId: "R3_nWbdu3es"
 features:

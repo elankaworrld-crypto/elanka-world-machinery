@@ -2,10 +2,10 @@
 title: "200g Powder and Granule Weighing & Filling Machine"
 shortDescription: "High-precision 2g-200g powder and granule filler with 0.01g accuracy. Ideal for spices, grains, and flour in Sri Lanka."
 description: "Professional 200g powder and granule filling machine for Sri Lankan industries. Features digital weighing for precise filling of tea, rice, flour, and spices."
-image: "/images/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
+image: "/products/200g-powder-and-granule-filling-machine-in-sri-lanka.webp"
 images:
-  - "/images/products/200g-powder-and-granule-filling-machine-in-sri-lanka.jpg"
-  - "/images/products/200g-powder-filling-machine-sri-lanka.jpg"
+  - "/products/200g-powder-and-granule-filling-machine-in-sri-lanka.webp"
+  - "/products/200g-powder-filling-machine-sri-lanka.webp"
 categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule & Powder Filing Machines", "Filling Machines"]
 price: "Rs. 75,000"
 offerPrice: "75000"
