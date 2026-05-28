@@ -5,11 +5,11 @@ description: "Buy the 850mm Heavy Duty Pedal Sealing Machine (850x1) in Sri Lank
 price: "Rs. 120,000"
 offerPrice: "95000"
 brand: "Atlas Lanka"
-image: "/products/450mm-single-side-heavy-duty-pedal-sealing-machine.webp"
+image: "/products/850mm-single-side-heavy-duty-pedal-sealing-machine.webp"
 images:
-  - "/products/450mm-single-side-heavy-duty-pedal-sealing-machine.webp"
-  - "/products/450mm-single-side-heavy-duty-pedal-sealing-machine-for-sale.webp"
-  - "/products/450mm-single-side-heavy-duty-pedal-sealing-machine-for-sale-in-srilanka.webp"
+  - "/products/850mm-single-side-heavy-duty-pedal-sealing-machine.webp"
+  - "/products/850mm-single-side-heavy-duty-pedal-sealing-machine-for-sale.webp"
+  - "/products/850mm-single-side-heavy-duty-pedal-sealing-machine-for-sale-in-srilanka.webp"
 categories: ["Packaging Machinery", "Sealing Solutions", "Sealing Machines", "Polythene Sealers", "Heavy Duty Pedal Sealers", "Foot sealers"]
 youtubeId: "I3UQScMrMpw"
 features:
