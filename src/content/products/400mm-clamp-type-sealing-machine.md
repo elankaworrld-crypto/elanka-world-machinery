@@ -3,7 +3,7 @@ title: "400mm Clamp Type Constant Heat Sealing Machine"
 shortDescription: "Industrial 400mm direct-heat clamp sealer. Heavy-duty handheld impulse or constant heat plier sealer for thick foil pouches, kraft paper, and laminated bags in Sri Lanka."
 description: "Shop the best 400mm Clamp Type Sealing Machine in Sri Lanka. High-performance portable plier sealer with 0-300°C adjustable temperature for thick packaging films."
 price: "Rs. 45,000"
-offerPrice: "32500"
+offerPrice: "Rs 32,500"
 brand: "Atlas Lanka"
 image: "/products/400mm-clamp-type-sealer.webp"
 images:
