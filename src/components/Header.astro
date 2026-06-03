@@ -1,9 +1,13 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-// This creates a helper function to check if a link is active
+
 const isActive = (path) => {
   if (path === '/') {
     return pathname === '/' || pathname === '';
+  }
+  // This ensures the "Shop" tab stays active when viewing any category page
+  if (path === '/shop') {
+    return pathname.startsWith('/shop') || pathname.startsWith('/category/');
   }
   return pathname.startsWith(path);
 };
@@ -25,21 +29,32 @@ const isActive = (path) => {
 </div>
 
         <div class="nav-section">
-           <nav class="nav-menu" id="navMenu">
-    <a href="/" class={`nav-link ${isActive('/') ? "active" : ""}`}>Home</a>
-    <a href="/about" class={`nav-link ${isActive('/about') ? "active" : ""}`}>About</a>
-    <a href="/conveyor" class={`nav-link ${isActive('/conveyor') ? "active" : ""}`}>Conveyors</a>
-    <a href="/shop" class={`nav-link ${isActive('/shop') ? "active" : ""}`}>Shop</a>
-    <a href="/packaging-materials" class={`nav-link ${isActive('/packaging-materials') ? "active" : ""}`}>Materials</a>
-    <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
-</nav>
-
-            <button class="hamburger mobile-only" id="hamburgerBtn" aria-label="Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+    <nav class="nav-menu" id="navMenu">
+        <a href="/" class={`nav-link ${isActive('/') ? "active" : ""}`}>Home</a>
+        <a href="/about" class={`nav-link ${isActive('/about') ? "active" : ""}`}>About</a>
+        <a href="/conveyor" class={`nav-link ${isActive('/conveyor') ? "active" : ""}`}>Conveyors</a>
+        
+        <div class="dropdown-wrapper">
+            <a href="/shop" class={`nav-link dropdown-toggle ${isActive('/shop') ? "active" : ""}`}>
+                Shop <span class="dropdown-caret">▼</span>
+            </a>
+            <div class="dropdown-menu">
+                <a href="/category/band-sealers/" class={`submenu-link ${pathname === '/category/band-sealers/' ? 'sub-active' : ''}`}>
+                    Band Sealers
+                </a>
+                </div>
         </div>
+
+        <a href="/packaging-materials" class={`nav-link ${isActive('/packaging-materials') ? "active" : ""}`}>Materials</a>
+        <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
+    </nav>
+
+    <button class="hamburger mobile-only" id="hamburgerBtn" aria-label="Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+</div>
     </div>
 
     <div class="mobile-search-layer mobile-only">
@@ -287,4 +302,100 @@ const isActive = (path) => {
     color: #dc2626; 
   }
   
+  /* --- SUBMENU STYLING --- */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-caret {
+  font-size: 0.65rem;
+  margin-left: 3px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 0.5rem 0;
+    z-index: 1100;
+    border: 1px solid #e2e8f0;
+  }
+
+  /* Show menu on hover */
+  .dropdown-wrapper:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-wrapper:hover .dropdown-caret {
+    transform: rotate(180deg);
+  }
+
+  .submenu-link {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .submenu-link:hover {
+    background-color: #f1f5f9;
+    color: #059669; /* Matches your brand green */
+  }
+
+  .submenu-link.sub-active {
+    color: #dc2626;
+    background-color: #fef2f2;
+    font-weight: 600;
+  }
+}
+
+/* Mobile Layout Transformations */
+@media (max-width: 768px) {
+  .dropdown-wrapper {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    display: block; /* Keep structure static within mobile drawer flow */
+    padding-left: 1.5rem;
+    border-left: 2px solid #e2e8f0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .submenu-link {
+    display: block;
+    text-decoration: none;
+    color: #475569;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    width: 100%;
+    border-bottom: 1px dashed #f1f5f9;
+  }
+  
+  .submenu-link.sub-active {
+    color: #dc2626;
+    font-weight: bold;
+  }
+}
+
 </style>
