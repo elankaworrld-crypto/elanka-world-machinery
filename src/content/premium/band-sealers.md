@@ -46,14 +46,15 @@ If you are expanding your production scale within the Sri Lankan market, upgradi
 
 ## Video Gallery
 
+<!-- High Performance Lazy-Loading Video Grid (1 Row/2 Columns Desktop, 2 Rows/1 Column Mobile) -->
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 25px 0 40px 0;">
   
   <!-- Video 1 -->
   <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background-color: #000;">
       <iframe 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-        src="https://www.youtube.com/embed/wKZ3GbkjOZg" 
+        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;font-size:32px;line-height:1.5;text-align:center;background:rgba(0,0,0,0.7);color:#fff;border-radius:50%;width:1.5em;left:0;right:0;transition:all 0.3s}span:hover{background:#ff0000}</style><a href='https://www.youtube.com/embed/wKZ3GbkjOZg?autoplay=1'><img src='https://img.youtube.com/vi/wKZ3GbkjOZg/hqdefault.jpg' alt='Liquid on Vertical band sealer demonstration' width='480' height='360'><span>&#x25BA;</span></a>"
         title="Liquid on Vertical band sealer demonstration" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
@@ -66,10 +67,10 @@ If you are expanding your production scale within the Sri Lankan market, upgradi
 
   <!-- Video 2 -->
   <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background-color: #000;">
       <iframe 
         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-        src="https://www.youtube.com/embed/dexTgzkcOCs" 
+        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;font-size:32px;line-height:1.5;text-align:center;background:rgba(0,0,0,0.7);color:#fff;border-radius:50%;width:1.5em;left:0;right:0;transition:all 0.3s}span:hover{background:#ff0000}</style><a href='https://www.youtube.com/embed/dexTgzkcOCs?autoplay=1'><img src='https://img.youtube.com/vi/dexTgzkcOCs/hqdefault.jpg' alt='Nitrogen Filling band sealer demonstration' width='480' height='360'><span>&#x25BA;</span></a>"
         title="Nitrogen Filling band sealer demonstration" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
