@@ -7,7 +7,7 @@ images:
   - "/products/2-filling-CNC-liquid-fill-machine.webp"
   - "/products/Doublehead-liquid-filling-machine.webp"
   - "/products/2-nozzle-liauid-filling-machine-sri-lanka.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine", "CNC Liquid Filling Machine"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine", "Liquid & Paste Filling Machine", "CNC Liquid Filling Machine"]
 price: "Rs. 78,500"
 offerPrice: "Rs. 56,500"
 ---

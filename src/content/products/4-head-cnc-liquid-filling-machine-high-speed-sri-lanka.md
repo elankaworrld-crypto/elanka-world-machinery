@@ -5,7 +5,7 @@ description: "High-efficiency 4-head CNC liquid filling machine. Features four i
 image: "/products/4-nozzle-liquid-filling-machine-in-sri-lanka.webp"
 images:
   - "/products/4-nozzle-liquid-filling-machine-in-sri-lanka.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Liquid & Paste Filling Machine", "Juice Filling Machine"]
 price: "Rs. 135,000"
 offerPrice: "Rs. 98,500"
 ---
