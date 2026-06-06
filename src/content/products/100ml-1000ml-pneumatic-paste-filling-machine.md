@@ -4,10 +4,10 @@ shortDescription: "Industrial semi-automatic pneumatic piston filler for high-vi
 description: "Buy the best pneumatic paste filling machine in Sri Lanka. Heavy-duty 100ml-1000ml piston filler for jam, nutella, brake oil, and sauces with local warranty."
 price: "Rs. 210,000"
 offerPrice: "188000"
-image: "/products/paste-filling-machine.webp"
+image: "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml.webp"
 images:
-  - "/products/paste-filling-machine-price-in-sri-lanka.webp"
-  - "/products/pneumatic-filler-sri-lanka.webp"
+  - "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml-for-sale.webp"
+  - "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml.webp"
 categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Pneumatic Filling Machines"]
 youtubeId: "eaFv0g6Ga0s"
 features:
