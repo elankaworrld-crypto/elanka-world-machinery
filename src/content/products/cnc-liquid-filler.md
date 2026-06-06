@@ -6,7 +6,7 @@ image: "/products/cnc-filler-main.webp"
 images:
   - "/products/cnc-filler-main.webp"
   - "/products/cnc-filler-panel.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine", "CNC Liquid Filling Machine"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine", "Liquid & Paste Filling Machine", "CNC Liquid Filling Machine"]
 price: "Rs. 38,500"
 offerPrice: "Rs. 32,500"
 ---
