@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PriceFilter from '../../components/PriceFilter.jsx';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const allProducts = await getCollection('products');
@@ -29,6 +29,20 @@ export async function getStaticPaths() {
 }
 const { categoryName, products, allCategories = [] } = Astro.props;
 
+// 1. Get the current category slug being viewed (e.g., "industrial-mixers")
+const { category } = Astro.params;
+
+// 2. Look into the 'premium' content collection to see if a matching slug exists
+const premiumEntries = await getCollection('premium');
+const premiumContentFile = premiumEntries.find(entry => entry.id === category);
+
+// 3. If a file exists, prepare its Render component so we can use it like HTML
+let PremiumContentComponent = null;
+if (premiumContentFile) {
+  const rendered = await render(premiumContentFile);
+  PremiumContentComponent = rendered.Content;
+}
+
 const seoTitle = `${categoryName} in Sri Lanka | E Lanka World`;
 const seoDescription = `Best ${categoryName} in Sri Lanka. E Lanka World provides high-performance ${categoryName} with local warranty, island-wide delivery, and expert technical support.`;
 
@@ -55,7 +69,6 @@ const currentContent = {
   ]
 };
 ---
-
 
 <Layout title={seoTitle} description={seoDescription}>
 
@@ -98,6 +111,14 @@ const currentContent = {
   </div>
   <PriceFilter client:load initialProducts={products} categoryName={categoryName} />
 </section>
+
+<!-- 🌟 START OF INJECTION 🌟 -->
+{PremiumContentComponent && (
+  <section class="premium-custom-content">
+    <PremiumContentComponent />
+  </section>
+)}
+<!-- 🌟 END OF INJECTION 🌟 -->
 
     <section class="seo-guide">
   <h2>The Ultimate Guide to {categoryName} in Sri Lanka</h2>
@@ -674,6 +695,21 @@ const currentContent = {
 /* 2. Target any rogue inputs that aren't the price slider */
 .machinery-filter input:not([type="range"]) {
     display: none !important;
+}
+
+.premium-custom-content {
+  margin: 40px 0;
+  padding: 20px 0;
+}
+
+/* This ensures any YouTube iframes or comparison tables you write inside 
+   your markdown files don't break layout structures on mobile devices */
+.premium-custom-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  overflow-x: auto;
+  display: block;
 }
 
 </style>

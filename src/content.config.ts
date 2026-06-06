@@ -15,4 +15,13 @@ const products = defineCollection({
   }),
 });
 
-export const collections = { products };
+// 🌟 Add the Premium Collection using the v5 glob loader syntax
+const premium = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/premium" }),
+  schema: z.object({
+    title: z.string().optional(), // Keeps frontmatter title optional for you
+  }),
+});
+
+// 🌟 Export both collections so Astro registers them
+export const collections = { products, premium };
