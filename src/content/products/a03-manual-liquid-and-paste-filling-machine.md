@@ -3,13 +3,13 @@ title: "A03 Manual Liquid & Paste Filling Machine"
 shortDescription: "Industrial A03 manual tabletop liquid and paste filling machine. Perfect 5-100ml adjustable dosing for creams, sauces, oils, and cosmetics in Sri Lanka."
 description: "Buy the A03 Manual Liquid and Paste Filling Machine in Sri Lanka. High-accuracy 5-100ml desktop piston filler for honey, cosmetics, creams, and oils."
 price: "Rs. 65,000"
-offerPrice: "48000"
-brand: "Atlas Lanka"
+offerPrice: "Rs. 48,000"
+brand: "PACKONI"
 image: "/products/A03-manual-liquid-and-paste-filling-machine.webp"
 images:
   - "/products/A03-manual-liquid-and-paste-filling-machine.webp"
   - "/products/A03-manual-liquid-and-paste-filling-machine-in-srilanka.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Pneumatic Filling Machines"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Pneumatic Filling Machines"]
 youtubeId: "uodOAxGLVHQ"
 features:
   - "Highly accurate manual piston mechanism dosing from 5ml to 100ml"

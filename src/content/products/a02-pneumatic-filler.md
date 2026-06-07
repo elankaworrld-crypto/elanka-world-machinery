@@ -8,7 +8,7 @@ images: [
 ]
 price: "Rs. 89,500"
 offerPrice: "Rs. 78,500"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Pneumatic Filling Machines"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Pneumatic Filling Machines"]
 shortDescription: "Heavy-duty semi-automatic pneumatic piston filler designed for accurate 5ml to 50ml dispensing of thick pastes and liquids."
 ---
 

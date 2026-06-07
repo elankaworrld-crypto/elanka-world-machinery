@@ -1,14 +1,14 @@
 ---
-title: "Heavy-Duty Pneumatic Paste Filling Machine (500ml - 3000ml)"
+title: "500 ml - 5000 ml Pneumatic Paste Filling Machine"
 shortDescription: "Large-capacity industrial pneumatic piston filling machine for commercial paste and liquid packaging."
 description: "Buy the best 500ml - 3000ml pneumatic paste filling machine in Sri Lanka. Heavy-duty semi-automatic piston filler for high-volume manufacturing with local warranty."
 price: "Rs. 245,000"
-offerPrice: "225000"
+offerPrice: "Rs. 225,000"
 image: "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml.webp"
 images:
   - "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml-for-sale.webp"
   - "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Pneumatic Filling Machines"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Pneumatic Filling Machines"]
 youtubeId: "eaFv0g6Ga0s"
 features:
   - "Large-capacity pneumatic cylinder for bulk volumetric filling"
