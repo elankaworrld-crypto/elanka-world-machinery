@@ -6,7 +6,6 @@ import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
   const allProducts = await getCollection('products');
 
-  // This defines the missing variable by pulling unique categories from your products
   const uniqueCategories = [
     ...new Set(allProducts.flatMap((item) => item.data.categories || []))
   ];
@@ -28,15 +27,11 @@ export async function getStaticPaths() {
   });
 }
 const { categoryName, products, allCategories = [] } = Astro.props;
-
-// 1. Get the current category slug being viewed (e.g., "industrial-mixers")
 const { category } = Astro.params;
 
-// 2. Look into the 'premium' content collection to see if a matching slug exists
 const premiumEntries = await getCollection('premium');
 const premiumContentFile = premiumEntries.find(entry => entry.id === category);
 
-// 3. If a file exists, prepare its Render component so we can use it like HTML
 let PremiumContentComponent = null;
 if (premiumContentFile) {
   const rendered = await render(premiumContentFile);
@@ -49,7 +44,6 @@ const seoDescription = `Best ${categoryName} in Sri Lanka. E Lanka World provide
 const facebookUrl = "https://www.facebook.com/CodingMachineSriLanka/";
 const youtubeUrl = "https://www.youtube.com/@atlaslanka2116";
 
-// This is truly universal. It works for 1 or 1,000 categories.
 const currentContent = {
   guide: `High-performance ${categoryName} solutions are critical for maintaining production standards in the Sri Lankan industrial sector. Our range of ${categoryName} is specifically selected to provide durability, precision, and ease of use for local manufacturers, from small-scale startups to large factories.`,
   
@@ -71,8 +65,7 @@ const currentContent = {
 ---
 
 <Layout title={seoTitle} description={seoDescription}>
-
-<script type="application/ld+json" is:inline set:html={JSON.stringify({
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": `${categoryName} - Industrial Machinery Sri Lanka`,
@@ -81,7 +74,6 @@ const currentContent = {
       "@type": "Organization",
       "name": "E Lanka World International",
       "areaServed": "Sri Lanka"
-
     }
   })} />
 
@@ -103,613 +95,187 @@ const currentContent = {
         </p>
       </header>
 
+      <section class="machinery-filter">
+        <div class="filter-header">
+          <h3>Filter {categoryName} by Budget</h3>
+          <p>Use the slider below to find the right industrial solution for your price range.</p>
+        </div>
+        <PriceFilter client:visible initialProducts={products} categoryName={categoryName} />
+      </section>
 
-<section class="machinery-filter">
-  <div class="filter-header">
-    <h3>Filter {categoryName} by Budget</h3>
-    <p>Use the slider below to find the right industrial solution for your price range.</p>
-  </div>
-  <PriceFilter client:load initialProducts={products} categoryName={categoryName} />
-</section>
+      {PremiumContentComponent && (
+        <section class="premium-custom-content">
+          <PremiumContentComponent />
+        </section>
+      )}
 
-<!-- 🌟 START OF INJECTION 🌟 -->
-{PremiumContentComponent && (
-  <section class="premium-custom-content">
-    <PremiumContentComponent />
-  </section>
-)}
-<!-- 🌟 END OF INJECTION 🌟 -->
+      <section class="seo-guide">
+        <h2>The Ultimate Guide to {categoryName} in Sri Lanka</h2>
+        <div class="guide-content">
+          <p>{currentContent.guide}</p>
+          <p>At E Lanka World International, we understand the local market requirements for <strong>{categoryName}</strong>, ensuring all equipment meets industrial safety and efficiency standards.</p>
+        </div>
+      </section>
 
-    <section class="seo-guide">
-  <h2>The Ultimate Guide to {categoryName} in Sri Lanka</h2>
-  <div class="guide-content">
-    <p>{currentContent.guide}</p>
-    <p>At E Lanka World International, we understand the local market requirements for <strong>{categoryName}</strong>, ensuring all equipment meets industrial safety and efficiency standards.</p>
-  </div>
-</section>
-
-<section class="faq-section">
-  <h2>{categoryName} Frequently Asked Questions</h2>
-  <div class="faq-grid">
-    {currentContent.faq.map(item => (
-      <div class="faq-item">
-        <p class="faq-q"><strong>{item.q}</strong></p>
-        <p class="faq-a">{item.a}</p>
-      </div>
-    ))}
-  </div>
-</section>
+      <section class="faq-section">
+        <h2>{categoryName} Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          {currentContent.faq.map(item => (
+            <div class="faq-item">
+              <p class="faq-q"><strong>{item.q}</strong></p>
+              <p class="faq-a">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section class="trust-block">
-  <h2>Why Source {categoryName} From Us?</h2>
-  <div class="trust-grid">
-    <div class="trust-card">
-      <h4>Local Sri Lankan Warranty</h4>
-      <p>We provide full technical support and spare parts for {categoryName} across Colombo, Kandy, and Gampaha.</p>
+        <h2>Why Source {categoryName} From Us?</h2>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h4>Local Sri Lankan Warranty</h4>
+            <p>We provide full technical support and spare parts for {categoryName} across Colombo, Kandy, and Gampaha.</p>
+          </div>
+          <div class="trust-card">
+            <h4>Fast Island-wide Shipping</h4>
+            <p>Get your {categoryName} delivered safely to your factory anywhere in Sri Lanka within 2-4 business days.</p>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="trust-card">
-      <h4>Fast Island-wide Shipping</h4>
-      <p>Get your {categoryName} delivered safely to your factory anywhere in Sri Lanka within 2-4 business days.</p>
-    </div>
-  </div>
-</section>
 
+    <div class="social-proof">
+      <a 
+        href={facebookUrl} 
+        target="_blank" 
+        class="soc-btn fb" 
+        aria-label={`Follow E Lanka World on Facebook for ${categoryName} updates`}
+        rel="noopener noreferrer"
+      >
+        Facebook Page
+      </a>
+      <a 
+        href={youtubeUrl} 
+        target="_blank" 
+        class="soc-btn yt" 
+        aria-label={`Watch ${categoryName} demonstration videos on YouTube`}
+        rel="noopener noreferrer"
+      >
+        Watch Demos
+      </a>
     </div>
-
-<div class="social-proof">
-  <a 
-    href={facebookUrl} 
-    target="_blank" 
-    class="soc-btn fb" 
-    aria-label={`Follow E Lanka World on Facebook for ${categoryName} updates`}
-  >
-    Facebook Page
-  </a>
-  <a 
-    href={youtubeUrl} 
-    target="_blank" 
-    class="soc-btn yt" 
-    aria-label={`Watch ${categoryName} demonstration videos on YouTube`}
-  >
-    Watch Demos
-  </a>
-</div>
 
     <section class="company-trust-footer">
-  <div class="trust-content">
-    <div class="trust-text">
-      <h2>About E Lanka World International</h2>
-      <p>
-        Since our inception, <strong>E Lanka World International</strong> has been a cornerstone in the Sri Lankan manufacturing landscape. 
-        We specialize in importing high-performance industrial packaging and coding machinery directly from top-tier manufacturers.
-      </p>
-      <ul class="trust-points">
-        <li>✅ <strong>Direct Importer:</strong> No middle-men, ensuring the best prices in Sri Lanka.</li>
-        <li>✅ <strong>Expert Technical Team:</strong> On-site installation and maintenance support.</li>
-        <li>✅ <strong>Ready Stock:</strong> We maintain a local warehouse for quick delivery and spare parts.</li>
-      </ul>
-      <a href="/about" class="btn-about">Learn More About Our Journey</a>
-    </div>
-    <div class="trust-badge-container">
-      <div class="badge">
-        <span class="badge-number">100%</span>
-        <span class="badge-label">Genuine Parts</span>
+      <div class="trust-content">
+        <div class="trust-text">
+          <h2>About E Lanka World International</h2>
+          <p>
+            Since our inception, <strong>E Lanka World International</strong> has been a cornerstone in the Sri Lankan manufacturing landscape. 
+            We specialize in importing high-performance industrial packaging and coding machinery directly from top-tier manufacturers.
+          </p>
+          <ul class="trust-points">
+            <li>✅ <strong>Direct Importer:</strong> No middle-men, ensuring the best prices in Sri Lanka.</li>
+            <li>✅ <strong>Expert Technical Team:</strong> On-site installation and maintenance support.</li>
+            <li>✅ <strong>Ready Stock:</strong> We maintain a local warehouse for quick delivery and spare parts.</li>
+          </ul>
+          <a href="/about" class="btn-about">Learn More About Our Journey</a>
+        </div>
+        <div class="trust-badge-container">
+          <div class="badge">
+            <span class="badge-number">100%</span>
+            <span class="badge-label">Genuine Parts</span>
+          </div>
+          <div class="badge">
+            <span class="badge-number">Local</span>
+            <span class="badge-label">Service Warranty</span>
+          </div>
+        </div>
       </div>
-      <div class="badge">
-        <span class="badge-number">Local</span>
-        <span class="badge-label">Service Warranty</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
   </main>
 </Layout>
 
 <style is:global>
-
-
-
-  /* I used is:global because these styles need to apply to the PriceFilter.jsx output */
-  
-  .category-page { padding: 40px 0 80px; background-color: #fcfcfc; }
-  /* REPLACE YOUR EXISTING .container WITH THIS */
-.container { 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 15px; /* Slightly smaller padding for mobile */
-  width: 100%;
-  box-sizing: border-box; 
-}
-
+  /* Keep existing layout structures but optimize spacing properties */
+  .category-page { padding: 40px 0 80px; background-color: #fcfcfc; contain-intrinsic-size: auto 1200px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; width: 100%; box-sizing: border-box; }
   .cat-header h1 { color: #059669; font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
   .intro-text { max-width: 850px; line-height: 1.7; color: #4b5563; font-size: 1.1rem; }
 
-  /* --- THE SMART GRID --- */
-  .product-grid { 
-    display: grid; 
-    grid-template-columns: 1fr; /* Changed from repeat(2, 1fr) to 1 column on mobile */
-    gap: 20px; 
-    margin-top: 30px;
-  }
+  /* Set structural baseline for injected markdown entries to eliminate shifts */
+  .premium-custom-content { margin: 40px 0; padding: 20px 0; min-height: 150px; content-visibility: auto; }
 
-  @media (min-width: 640px) {
-    .product-grid { 
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets/larger phones */
-    }
-}
+  .product-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
+  @media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
 
-  @media (min-width: 1024px) {
-    .product-grid { 
-      grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
-    }
-  }
-
-  /* --- THE UNIFORM CARD --- */
-  .product-card { 
-    background: white; 
-    border: 1px solid #e5e7eb; 
-    border-radius: 12px; 
-    display: flex; 
-    flex-direction: column; 
-    height: 100%; /* Force equal height in a row */
-    overflow: hidden; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .product-card:hover { 
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-  }
-
-  .img-container { 
-    aspect-ratio: 1 / 1; /* Makes the top image area perfectly square */
-    padding: 15px; 
-    background: #fff; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    border-bottom: 1px solid #f3f4f6;
-  }
-
+  .product-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; display: flex; flex-direction: column; height: 100%; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+  .img-container { aspect-ratio: 1 / 1; padding: 15px; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f3f4f6; }
   .img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
-  .card-info { 
-    padding: 15px; 
-    display: flex; 
-    flex-direction: column; 
-    flex-grow: 1; /* Pushes content to fill the card */
-  }
-
-  .product-card h3 { 
-    font-size: 1rem; 
-    line-height: 1.4; 
-    height: 2.8rem; /* Keeps titles aligned to exactly 2 lines */
-    overflow: hidden; 
-    margin-bottom: 8px; 
-    color: #111827; 
-  }
-
+  .card-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+  .product-card h3 { font-size: 1rem; line-height: 1.4; height: 2.8rem; overflow: hidden; margin-bottom: 8px; color: #111827; }
   .price { font-weight: 700; color: #059669; margin-bottom: 15px; font-size: 1.2rem; }
+  .card-actions { margin-top: auto; display: flex; flex-direction: column; gap: 8px; width: 100%; padding-top: 10px; }
+  .btn-learn, .btn-whatsapp { display: flex; align-items: center; justify-content: center; text-align: center; height: 44px; width: 100%; padding: 0 5px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: clamp(0.7rem, 2.5vw, 0.85rem); white-space: nowrap; transition: all 0.2s ease; cursor: pointer; box-sizing: border-box; overflow: visible; }
+  .btn-text { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .btn-learn { background-color: #001f3f; color: white !important; }
+  .btn-whatsapp { background-color: #25d366; color: white !important; }
+  .btn-learn:hover, .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-1px); }
 
-  /* --- BUTTONS --- */
-  /* --- BUTTON CONTAINER --- */
-.card-actions { 
-  margin-top: auto; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 8px;
-  width: 100%;
-  padding-top: 10px;
-}
+  .price-filter-box { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(229, 231, 235, 0.5); padding: 30px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+  .current-filter-label { display: block; font-size: 1.25rem; font-weight: 800; color: #1f2937; margin-bottom: 20px; letter-spacing: -0.025em; }
+  .current-filter-label b { color: #059669; family: monospace; background: #ecfdf5; padding: 2px 8px; border-radius: 4px; }
+  .price-range-input { -webkit-appearance: none; width: 100%; height: 8px; background: #e5e7eb; border-radius: 10px; outline: none; margin: 25px 0; }
+  .price-range-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: #059669; border: 4px solid #ffffff; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: all 0.2s ease; }
+  .price-range-input::-webkit-slider-thumb:hover { transform: scale(1.2); background: #047857; }
+  .range-labels { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #9ca3af; }
+  .count-text { margin-top: 15px; font-size: 0.9rem; color: #6b7280; font-style: italic; }
 
-/* --- THE UNIFORM BUTTON STYLE --- */
-.btn-learn, .btn-whatsapp { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center; 
-  
-  height: 44px; 
-  width: 100%;
-  padding: 0 5px; /* Reduced padding to give text more room */
-  border-radius: 8px; 
-  text-decoration: none; 
-  font-weight: 700;
-  
-  /* Use a slightly smaller base for the clamp */
-  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
-  
-  white-space: nowrap;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  box-sizing: border-box;
-  
-  /* Ensure text is visible */
-  overflow: visible; 
-}
+  .seo-guide { margin: 60px 0; padding: 40px; background: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+  .seo-guide h2 { color: #001f3f; margin-bottom: 20px; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.025em; }
+  .seo-guide p { color: #4b5563; line-height: 1.8; font-size: 1.05rem; }
 
-/* Add this to ensure the span inside takes up space correctly */
-.btn-text {
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+  .faq-section { margin-bottom: 80px; }
+  .faq-section h2 { color: #111827; font-size: 1.75rem; font-weight: 800; margin-bottom: 30px; }
+  .faq-grid { display: grid; gap: 20px; }
+  .faq-item { background: #f9fafb; padding: 25px; border-radius: 12px; border-left: 5px solid #059669; transition: transform 0.2s ease; }
+  .faq-item:hover { transform: translateX(5px); }
+  .faq-q { color: #111827; margin-bottom: 8px; font-size: 1.1rem; }
+  .faq-a { color: #4b5563; font-size: 1rem; line-height: 1.6; }
 
-/* Specific Colors */
-.btn-learn { 
-  background-color: #001f3f; 
-  color: white !important;
-}
+  .company-trust-footer { margin-top: 80px; padding: 60px 0; background-color: #001f3f; color: white; border-radius: 20px; }
+  .trust-content { max-width: 1000px; margin: 0 auto; padding: 0 20px; display: flex; gap: 50px; align-items: center; }
+  .trust-text h2 { color: #ffffff; font-size: 2rem; margin-bottom: 20px; }
+  .trust-text p { line-height: 1.7; color: #cbd5e1; margin-bottom: 25px; }
+  .trust-points { list-style: none; padding: 0; margin-bottom: 30px; }
+  .trust-points li { margin-bottom: 12px; font-size: 1.05rem; }
+  .btn-about { display: inline-block; padding: 12px 24px; background: #059669; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; transition: background 0.3s; }
+  .btn-about:hover { background: #047857; }
 
-.btn-whatsapp { 
-  background-color: #25d366; 
-  color: white !important;
-}
+  .trust-badge-container { display: flex; flex-direction: column; gap: 20px; }
+  .badge { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 12px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); min-width: 180px; }
+  .badge-number { display: block; font-size: 1.8rem; font-weight: 800; color: #059669; }
+  .badge-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Hover effects */
-.btn-learn:hover, .btn-whatsapp:hover { 
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* --- UI ELEMENTS (Price Box & Trust Grid) --- */
-.price-filter-box { 
-  background: #fff; 
-  border: 1px solid #e5e7eb; 
-  padding: 25px; 
-  border-radius: 12px; 
-  margin-bottom: 30px; 
-}
-
-.trust-grid { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 30px; 
-  margin-top: 20px;
-}
-
-  
   @media (max-width: 768px) {
-    .trust-grid { grid-template-columns: 1fr; }
-    .cat-header h1 { font-size: 2rem; }
+    .trust-content { flex-direction: column; text-align: center; }
+    .trust-badge-container { flex-direction: row; width: 100%; gap: 10px; }
+    .badge { flex: 1; min-width: 0; padding: 10px; font-size: 0.8rem; }
+    .badge-number { font-size: 1.4rem; }
   }
 
+  .machinery-filter { background: #f9fafb; border-radius: 16px; padding: 25px; margin: 20px 0 40px; border: 1px solid #e5e7eb; }
+  .filter-header h3 { font-size: 1.2rem; margin: 0; color: #001f3f; }
+  .filter-header p { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; }
+  .machinery-filter input[type="text"] { display: none !important; }
 
-  /* Social Buttons Styling */
-.social-proof { 
-  display: flex; 
-  gap: 12px; 
-  margin: 20px 0; 
-}
+  .machinery-filter .pagefind-ui, .machinery-filter #search, .price-filter-box .pagefind-ui, .price-filter-box #search { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; margin: 0 !important; }
+  .machinery-filter input:not([type="range"]) { display: none !important; }
 
-.soc-btn { 
-  padding: 10px 20px; 
-  border-radius: 50px; 
-  text-decoration: none; 
-  color: white !important; /* Ensures text stays white */
-  font-size: 0.9rem; 
-  font-weight: bold; 
-  transition: transform 0.2s, opacity 0.2s; 
-  display: inline-block;
-}
-
-.fb { background: #1877F2; } /* Facebook Blue */
-.yt { background: #FF0000; } /* YouTube Red */
-
-.soc-btn:hover { 
-  opacity: 0.9; 
-  transform: scale(1.05); 
-}
-
-
-/* Container: Glassmorphism Effect */
-.price-filter-box {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(229, 231, 235, 0.5);
-  padding: 30px;
-  border-radius: 16px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-}
-
-/* Label & Current Price Styling */
-.current-filter-label {
-  display: block;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #1f2937;
-  margin-bottom: 20px;
-  letter-spacing: -0.025em;
-}
-
-.current-filter-label b {
-  color: #059669; /* Your brand green */
-  font-family: monospace;
-  background: #ecfdf5;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-/* The Ultra-Modern Slider Track */
-.price-range-input {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 10px;
-  outline: none;
-  margin: 25px 0;
-}
-
-/* The Slider Thumb (The Circle) */
-.price-range-input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 24px;
-  height: 24px;
-  background: #059669;
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.2s ease;
-}
-
-.price-range-input::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
-  background: #047857;
-}
-
-/* Min/Max Range Labels */
-.range-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #9ca3af;
-}
-
-.count-text {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #6b7280;
-  font-style: italic;
-}
-
-/* SEO Guide: Added a soft shadow and better spacing */
-.seo-guide { 
-  margin: 60px 0; 
-  padding: 40px; 
-  background: #ffffff; 
-  border-radius: 16px; 
-  border: 1px solid #e5e7eb; 
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Match your category explorer shadow */
-}
-
-.seo-guide h2 { 
-  color: #001f3f; 
-  margin-bottom: 20px; 
-  font-size: 1.75rem; 
-  font-weight: 800; 
-  letter-spacing: -0.025em;
-}
-
-.seo-guide p { 
-  color: #4b5563; 
-  line-height: 1.8; 
-  font-size: 1.05rem; 
-}
-
-/* FAQ Section: Stronger visual hierarchy */
-.faq-section { margin-bottom: 80px; }
-
-.faq-section h2 {
-  color: #111827;
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-}
-
-.faq-grid { 
-  display: grid; 
-  gap: 20px; 
-}
-
-/* FAQ Item: Matching your industrial green accent */
-.faq-item { 
-  background: #f9fafb; 
-  padding: 25px; 
-  border-radius: 12px; 
-  border-left: 5px solid #059669; /* Your brand green */
-  transition: transform 0.2s ease;
-}
-
-.faq-item:hover {
-  transform: translateX(5px); /* Subtle interactive feel */
-}
-
-.faq-q { 
-  color: #111827; 
-  margin-bottom: 8px; 
-  font-size: 1.1rem; 
-}
-
-.faq-a { 
-  color: #4b5563; 
-  font-size: 1rem; 
-  line-height: 1.6;
-}
-
-
-.company-trust-footer {
-  margin-top: 80px;
-  padding: 60px 0;
-  background-color: #001f3f; /* Deep Navy - represents stability and trust */
-  color: white;
-  border-radius: 20px;
-}
-
-.trust-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  gap: 50px;
-  align-items: center;
-}
-
-.trust-text h2 {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.trust-text p {
-  line-height: 1.7;
-  color: #cbd5e1;
-  margin-bottom: 25px;
-}
-
-.trust-points {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
-}
-
-.trust-points li {
-  margin-bottom: 12px;
-  font-size: 1.05rem;
-}
-
-.btn-about {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #059669; /* Your brand green */
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-  transition: background 0.3s;
-}
-
-.btn-about:hover {
-  background: #047857;
-}
-
-/* Trust Badges */
-.trust-badge-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.badge {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  min-width: 180px;
-}
-
-.badge-number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #059669;
-}
-
-.badge-label {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 768px) {
-  .trust-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .trust-badge-container {
-    flex-direction: row;
-    width: 100%; /* Ensure container fills width */
-    gap: 10px;   /* Narrower gap for small screens */
-  }
-  /* --- ADD THIS PART BELOW --- */
-  .badge {
-    flex: 1;      /* Allows badges to shrink equally */
-    min-width: 0; /* REMOVES the 180px restriction */
-    padding: 10px;
-    font-size: 0.8rem;
-  }
-  .badge-number {
-    font-size: 1.4rem; /* Makes text fit better on mobile */
-  }
-}
-
-.machinery-filter {
-  background: #f9fafb;
-  border-radius: 16px;
-  padding: 25px;
-  margin: 20px 0 40px;
-  border: 1px solid #e5e7eb;
-}
-
-.filter-header h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  color: #001f3f;
-}
-
-.filter-header p {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin-bottom: 15px;
-}
-
-/* And still hide the extra input */
-.machinery-filter input[type="text"] {
-  display: none !important;
-}
-
-/* SURGERY: Total disappearance of the second search bar */
-
-/* 1. Target the Pagefind UI specifically if it's being injected into the filter section */
-.machinery-filter .pagefind-ui,
-.machinery-filter #search,
-.price-filter-box .pagefind-ui,
-.price-filter-box #search {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    height: 0 !important;
-    margin: 0 !important;
-}
-
-/* 2. Target any rogue inputs that aren't the price slider */
-.machinery-filter input:not([type="range"]) {
-    display: none !important;
-}
-
-.premium-custom-content {
-  margin: 40px 0;
-  padding: 20px 0;
-}
-
-/* This ensures any YouTube iframes or comparison tables you write inside 
-   your markdown files don't break layout structures on mobile devices */
-.premium-custom-content table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  overflow-x: auto;
-  display: block;
-}
-
+  .premium-custom-content table { width: 100%; border-collapse: collapse; margin: 20px 0; overflow-x: auto; display: block; }
+  .social-proof { display: flex; gap: 12px; margin: 20px auto; justify-content: center; }
+  .soc-btn { padding: 10px 20px; border-radius: 50px; text-decoration: none; color: white !important; font-size: 0.9rem; font-weight: bold; transition: transform 0.2s, opacity 0.2s; display: inline-block; }
+  .fb { background: #1877F2; } .yt { background: #FF0000; }
+  .soc-btn:hover { opacity: 0.9; transform: scale(1.05); }
 </style>
