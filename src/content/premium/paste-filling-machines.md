@@ -12,8 +12,8 @@ description: "High-precision commercial thick liquid and paste filling machines 
 
 <div style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
   <picture>
-    <source media="(max-width: 768px)" srcset="/products/Paste-filling-machines-in-srilanka.webp">
-    <img src="/products/paste-filling-machine-for-any-pastes.webp" alt="Industrial Paste and Thick Liquid Filling Machine Sri Lanka" style="width: 100%; height: auto; display: block;" loading="eager">
+    <source media="(max-width: 768px)" srcset="/products/paste-filling-machine-for-any-pastes.webp">
+    <img src="/products/Paste-filling-machines-in-srilanka.webp" alt="Industrial Paste and Thick Liquid Filling Machine Sri Lanka" style="width: 100%; height: auto; display: block;" loading="eager">
   </picture>
 </div>
 
