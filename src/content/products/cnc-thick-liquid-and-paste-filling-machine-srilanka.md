@@ -9,7 +9,7 @@ image: "/products/CNC-thick-liquid-and-paste-filling-machine-in-srilanka.webp"
 images:
   - "/products/CNC-thick-liquid-and-paste-filling-machine-in-srilanka.webp"
   - "/products/CNC-thick-liquid-and-paste-filling-machine.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Liquid & Paste Filling Machine", "CNC Liquid Filling Machine", "Engine Oil Filling Machine"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Liquid & Paste Filling Machine", "CNC Liquid Filling Machine", "Engine Oil Filling Machine", "Paste Filling Machines"]
 youtubeId: "HZG3YkrbcaI"
 features:
   - "Smart CNC digital processor unit ensuring ultra-precise dispensing volumes with minimal error margins"
