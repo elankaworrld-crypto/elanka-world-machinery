@@ -5,9 +5,9 @@ description: "High-precision commercial thick liquid and paste filling machines 
 
 ## Fill any Paste Item with ease
 <h2 style="color: #000000; font-weight: 800; margin-top: -10px; margin-bottom: 25px; font-size: 1.75rem; line-height: 1.3;">
-  ඕනෑම උකු ද්‍රව්‍යයක් හෝ පේස්ට් වර්ගයක් පහසුවෙන් ඇසුරුම් කරන්න<br>
+  ඕනෑම පේස්ට් වර්ගයක් පහසුවෙන් ඇසුරුම් කරන්න<br>
   <span style="font-size: 1.5rem; font-weight: 700; display: block; margin-top: 5px;">Fill any Paste Item with ease</span>
-  <span style="font-size: 1.4rem; font-weight: 600; display: block; margin-top: 5px; font-family: sans-serif;">எந்தவொரு பேஸ்ட் பொருட்களையும் எளிதாக நிரப்பவும்</span>
+  <span style="font-size: 1.4rem; font-weight: 600; display: block; margin-top: 5px; font-family: sans-serif;">எந்தவொரு பேஸ்ட் பொருட்களையும் எளிதாக நிரப்ப</span>
 </h2>
 
 <div style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
