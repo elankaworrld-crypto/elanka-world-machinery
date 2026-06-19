@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="conveyor-hero-overlay">
 				<div class="conveyor-lang-stack">
 					<span class="sinhala">කාර්මික කන්වෙයර් සිස්ටම් සහ බෙල්ට් වර්ග</span>
-					<span class="tamil">இண்டஸ்ட்ரியல் கன்வெயர் சிஸ்டம்ஸ் மற்றும் பெல்ட்கள்</span>
+					<span class="tamil">இண்டஸ்ட்ரியல் கன்வெயர் சிஸ்டம்கள் மற்றும் பெல்ட்டுகள்</span>
 				</div>
 				<h1>Industrial Conveyor Systems in Sri Lanka</h1>
 				<h2>Premium Automation Infrastructure from E Lanka World International</h2>
@@ -34,9 +34,30 @@ import Layout from '../layouts/Layout.astro';
 
 		<section class="conveyor-offer-section">
 			<div class="conveyor-container">
+				<!-- Core Section Headers -->
 				<h2 class="conveyor-section-title">Our Specialized Conveyor Categories</h2>
 				<p class="conveyor-section-subtitle">Select a category below to explore specific component technical parameters and sizing charts.</p>
-				
+
+				<!-- High-Level Overview Snapshot Bar -->
+				<div class="conveyor-snapshot-bar">
+					<div class="conveyor-snapshot-item">
+						<div class="snapshot-icon">🩹</div>
+						<h4>Conveyor Belts</h4>
+						<p>Canvas, PVC, Mesh, and premium local Rubber belts manufactured in Sri Lanka.</p>
+					</div>
+					<div class="conveyor-snapshot-item">
+						<div class="snapshot-icon">⚙️</div>
+						<h4>Conveyor Systems</h4>
+						<p>Loading/unloading setups, gravity rollers, roller beds, and heavy freight elevators.</p>
+					</div>
+					<div class="conveyor-snapshot-item">
+						<div class="snapshot-icon">🛠️</div>
+						<h4>Accessories & Services</h4>
+						<p>On-site vulcanizing, industrial motors, heavy-duty rollers, hinges, and custom spares.</p>
+					</div>
+				</div>
+
+				<!-- Detailed Category Cards -->
 				<div class="conveyor-grid-hub">
 					
 					<article class="conveyor-hub-card">
@@ -342,6 +363,44 @@ import Layout from '../layouts/Layout.astro';
 		color: white;
 	}
 
+	/* --- NEW SNAPSHOT OVERVIEW STYLING --- */
+	.conveyor-snapshot-bar {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 4rem;
+		background: #ffffff;
+		padding: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+		border: 1px solid #e2e8f0;
+		text-align: left;
+	}
+
+	.conveyor-snapshot-item {
+		padding: 0.5rem 1rem;
+		border-left: 3px solid #2563eb;
+	}
+
+	.snapshot-icon {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.conveyor-snapshot-item h4 {
+		font-size: 1.15rem;
+		color: #001f3f;
+		margin: 0 0 0.4rem 0;
+		font-weight: 700;
+	}
+
+	.conveyor-snapshot-item p {
+		font-size: 0.9rem;
+		color: #475569;
+		line-height: 1.5;
+		margin: 0;
+	}
+
 	/* --- SEO TEXT SECTION STYLING --- */
 	.conveyor-seo-section {
 		padding: 5rem 1.5rem;
@@ -455,6 +514,20 @@ import Layout from '../layouts/Layout.astro';
 		.conveyor-hub-card {
 			max-width: 420px;
 			margin: 0 auto; /* Keep structural card centered perfectly */
+		}
+		.conveyor-snapshot-bar {
+			padding: 1.5rem 1rem;
+			background: transparent;
+			box-shadow: none;
+			border: none;
+			gap: 1.25rem;
+			margin-bottom: 2.5rem;
+		}
+		.conveyor-snapshot-item {
+			background: #ffffff;
+			padding: 1.2rem;
+			border-radius: 0 8px 8px 0;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 		}
 	}
 </style>
