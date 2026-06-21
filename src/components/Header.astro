@@ -8,6 +8,9 @@ const isActive = (path) => {
   if (path === '/shop') {
     return pathname.startsWith('/shop') || pathname.startsWith('/category/');
   }
+  if (path === '/conveyor') {
+    return pathname.startsWith('/conveyor') || pathname === '/conveyor-accessories' || pathname === '/conveyor-belts-only';
+  }
   return pathname.startsWith(path);
 };
 ---
@@ -31,7 +34,20 @@ const isActive = (path) => {
             <nav class="nav-menu" id="navMenu">
                 <a href="/" class={`nav-link ${isActive('/') ? "active" : ""}`}>Home</a>
                 <a href="/about" class={`nav-link ${isActive('/about') ? "active" : ""}`}>About</a>
-                <a href="/conveyor" class={`nav-link ${isActive('/conveyor') ? "active" : ""}`}>Conveyors</a>
+                <div class="dropdown-wrapper" id="conveyorDropdown">
+    <div class="dropdown-nav-group">
+        <a href="/conveyor" class={`nav-link main-shop-link ${isActive('/conveyor') ? "active" : ""}`}>
+            Conveyors
+        </a>
+        <button class="dropdown-arrow-btn" aria-label="Toggle Conveyors Menu" aria-expanded="false">
+            <span class="dropdown-caret">▼</span>
+        </button>
+    </div>
+    <div class="dropdown-menu">
+        <a href="/conveyor-accessories" class={`submenu-link ${pathname === '/conveyor-accessories' ? 'sub-active' : ''}`}>Accessories</a>
+        <a href="/conveyor-belts-only" class={`submenu-link ${pathname === '/conveyor-belts-only' ? 'sub-active' : ''}`}>Belts</a>
+    </div>
+</div>
                 
                 <div class="dropdown-wrapper" id="shopDropdown">
                     <div class="dropdown-nav-group">
@@ -112,30 +128,51 @@ const isActive = (path) => {
       navMenu.classList.toggle('active');
   });
 
-  // FIXED INTERACTIVE ENGINE FOR ARROW TRIGGER CLICK
-  const dropdownWrapper = document.getElementById('shopDropdown');
-  const arrowToggleBtn = dropdownWrapper?.querySelector('.dropdown-arrow-btn');
+  // UNIVERSAL INTERACTIVE ENGINE FOR MULTIPLE DROPDOWNS
+  const dropdowns = [
+    { id: 'shopDropdown', path: '/shop' },
+    { id: 'conveyorDropdown', path: '/conveyor' }
+  ];
 
-  arrowToggleBtn?.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation(); // Stops immediate document click collision handler from closing it
-    const isOpen = dropdownWrapper.classList.contains('open');
-    
-    if (isOpen) {
-      dropdownWrapper.classList.remove('open');
-      arrowToggleBtn.setAttribute('aria-expanded', 'false');
-    } else {
-      dropdownWrapper.classList.add('open');
-      arrowToggleBtn.setAttribute('aria-expanded', 'true');
-    }
+  dropdowns.forEach(({ id }) => {
+    const wrapper = document.getElementById(id);
+    const arrowBtn = wrapper?.querySelector('.dropdown-arrow-btn');
+
+    arrowBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpen = wrapper.classList.contains('open');
+
+      // Close all other open dropdowns first
+      dropdowns.forEach(d => {
+        if (d.id !== id) {
+          const otherWrapper = document.getElementById(d.id);
+          otherWrapper?.classList.remove('open');
+          otherWrapper?.querySelector('.dropdown-arrow-btn')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Toggle the targeted one
+      if (isOpen) {
+        wrapper.classList.remove('open');
+        arrowBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        wrapper.classList.add('open');
+        arrowBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 
-  // Global document click closer (Closes menu if clicking anywhere outside the wrapper panel)
+  // Global document click closer (Closes menus if clicking anywhere outside)
   document.addEventListener('click', (e) => {
-    if (!dropdownWrapper?.contains(e.target)) {
-      dropdownWrapper?.classList.remove('open');
-      arrowToggleBtn?.setAttribute('aria-expanded', 'false');
-    }
+    dropdowns.forEach(({ id }) => {
+      const wrapper = document.getElementById(id);
+      if (!wrapper?.contains(e.target)) {
+        wrapper?.classList.remove('open');
+        wrapper?.querySelector('.dropdown-arrow-btn')?.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 
   // Pagefind UI clear panel actions
