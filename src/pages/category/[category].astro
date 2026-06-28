@@ -100,7 +100,7 @@ const currentContent = {
           <h3>Filter {categoryName} by Budget</h3>
           <p>Use the slider below to find the right industrial solution for your price range.</p>
         </div>
-        <PriceFilter client:visible initialProducts={products} categoryName={categoryName} />
+        <PriceFilter client:idle initialProducts={products} categoryName={categoryName} />
       </section>
 
       {PremiumContentComponent && (
@@ -196,42 +196,54 @@ const currentContent = {
 </Layout>
 
 <style>
-  /* Keep existing layout structures but optimize spacing properties */
+  /* 1. Structural styles for this exact page file */
   .category-page { padding: 40px 0 80px; background-color: #fcfcfc; contain-intrinsic-size: auto 1200px; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; width: 100%; box-sizing: border-box; }
   .cat-header h1 { color: #059669; font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
   .intro-text { max-width: 850px; line-height: 1.7; color: #4b5563; font-size: 1.1rem; }
-
-  /* Set structural baseline for injected markdown entries to eliminate shifts */
   .premium-custom-content { margin: 40px 0; padding: 20px 0; min-height: 150px; content-visibility: auto; }
 
-  .product-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
-  @media (min-width: 640px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+  /* 2. SURGICAL FIX: Style component child selectors deep within the filter container */
+  .machinery-filter { background: #f9fafb; border-radius: 16px; padding: 25px; margin: 20px 0 40px; border: 1px solid #e5e7eb; min-height: 175px; }
+  .filter-header h3 { font-size: 1.2rem; margin: 0; color: #001f3f; }
+  .filter-header p { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; }
 
-  .product-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; display: flex; flex-direction: column; height: 100%; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-  .img-container { aspect-ratio: 1 / 1; padding: 15px; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f3f4f6; }
-  .img-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
-  .card-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
-  .product-card h3 { font-size: 1rem; line-height: 1.4; height: 2.8rem; overflow: hidden; margin-bottom: 8px; color: #111827; }
-  .price { font-weight: 700; color: #059669; margin-bottom: 15px; font-size: 1.2rem; }
-  .card-actions { margin-top: auto; display: flex; flex-direction: column; gap: 8px; width: 100%; padding-top: 10px; }
-  .btn-learn, .btn-whatsapp { display: flex; align-items: center; justify-content: center; text-align: center; height: 44px; width: 100%; padding: 0 5px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: clamp(0.7rem, 2.5vw, 0.85rem); white-space: nowrap; transition: all 0.2s ease; cursor: pointer; box-sizing: border-box; overflow: visible; }
-  .btn-text { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
-  .btn-learn { background-color: #001f3f; color: white !important; }
-  .btn-whatsapp { background-color: #25d366; color: white !important; }
-  .btn-learn:hover, .btn-whatsapp:hover { opacity: 0.9; transform: translateY(-1px); }
+  /* Component structure scoping breakouts */
+  .machinery-filter :global(.price-filter-box) { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(229, 231, 235, 0.5); padding: 30px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+  .machinery-filter :global(.current-filter-label) { display: block; font-size: 1.25rem; font-weight: 800; color: #1f2937; margin-bottom: 20px; letter-spacing: -0.025em; }
+  .machinery-filter :global(.current-filter-label b) { color: #059669; background: #ecfdf5; padding: 2px 8px; border-radius: 4px; }
+  .machinery-filter :global(.price-range-input) { -webkit-appearance: none; width: 100%; height: 8px; background: #e5e7eb; border-radius: 10px; outline: none; margin: 25px 0; }
+  .machinery-filter :global(.price-range-input::-webkit-slider-thumb) { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: #059669; border: 4px solid #ffffff; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: all 0.2s ease; }
+  .machinery-filter :global(.price-range-input::-webkit-slider-thumb:hover) { transform: scale(1.2); background: #047857; }
+  .machinery-filter :global(.range-labels) { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #9ca3af; }
+  .machinery-filter :global(.count-text) { margin-top: 15px; font-size: 0.9rem; color: #6b7280; font-style: italic; }
 
-  .price-filter-box { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(229, 231, 235, 0.5); padding: 30px; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
-  .current-filter-label { display: block; font-size: 1.25rem; font-weight: 800; color: #1f2937; margin-bottom: 20px; letter-spacing: -0.025em; }
-  .current-filter-label b { color: #059669; family: monospace; background: #ecfdf5; padding: 2px 8px; border-radius: 4px; }
-  .price-range-input { -webkit-appearance: none; width: 100%; height: 8px; background: #e5e7eb; border-radius: 10px; outline: none; margin: 25px 0; }
-  .price-range-input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: #059669; border: 4px solid #ffffff; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: all 0.2s ease; }
-  .price-range-input::-webkit-slider-thumb:hover { transform: scale(1.2); background: #047857; }
-  .range-labels { display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #9ca3af; }
-  .count-text { margin-top: 15px; font-size: 0.9rem; color: #6b7280; font-style: italic; }
+  /* Product layouts populated inside components */
+  .machinery-filter :global(.product-grid) { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
+  @media (min-width: 640px) { .machinery-filter :global(.product-grid) { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .machinery-filter :global(.product-grid) { grid-template-columns: repeat(4, 1fr); } }
 
+  .machinery-filter :global(.product-card) { background: white; border: 1px solid #e5e7eb; border-radius: 12px; display: flex; flex-direction: column; height: 100%; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .machinery-filter :global(.product-card:hover) { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+  .machinery-filter :global(.img-container) { aspect-ratio: 1 / 1; padding: 15px; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f3f4f6; }
+  .machinery-filter :global(.img-container img) { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .machinery-filter :global(.card-info) { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+  .machinery-filter :global(.product-card h3) { font-size: 1rem; line-height: 1.4; height: 2.8rem; overflow: hidden; margin-bottom: 8px; color: #111827; }
+  .machinery-filter :global(.price) { font-weight: 700; color: #059669; margin-bottom: 15px; font-size: 1.2rem; }
+  .machinery-filter :global(.card-actions) { margin-top: auto; display: flex; flex-direction: column; gap: 8px; width: 100%; padding-top: 10px; }
+  .machinery-filter :global(.btn-learn), .machinery-filter :global(.btn-whatsapp) { display: flex; align-items: center; justify-content: center; text-align: center; height: 44px; width: 100%; padding: 0 5px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: clamp(0.7rem, 2.5vw, 0.85rem); white-space: nowrap; transition: all 0.2s ease; cursor: pointer; box-sizing: border-box; overflow: visible; }
+  .machinery-filter :global(.btn-text) { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+  .machinery-filter :global(.btn-learn) { background-color: #001f3f; color: white !important; }
+  .machinery-filter :global(.btn-whatsapp) { background-color: #25d366; color: white !important; }
+  .machinery-filter :global(.btn-learn:hover), .machinery-filter :global(.btn-whatsapp:hover) { opacity: 0.9; transform: translateY(-1px); }
+
+  /* Pagefind cleanups */
+  .machinery-filter input[type="text"] { display: none !important; }
+  .machinery-filter :global(.pagefind-ui), .machinery-filter :global(#search) { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; margin: 0 !important; }
+  .machinery-filter input:not([type="range"]) { display: none !important; }
+
+  /* 3. Base layout styling elements below */
+  .premium-custom-content :global(table) { width: 100%; border-collapse: collapse; margin: 20px 0; overflow-x: auto; display: block; }
   .seo-guide { margin: 60px 0; padding: 40px; background: #ffffff; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
   .seo-guide h2 { color: #001f3f; margin-bottom: 20px; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.025em; }
   .seo-guide p { color: #4b5563; line-height: 1.8; font-size: 1.05rem; }
@@ -265,15 +277,6 @@ const currentContent = {
     .badge-number { font-size: 1.4rem; }
   }
 
-  .machinery-filter { background: #f9fafb; border-radius: 16px; padding: 25px; margin: 20px 0 40px; border: 1px solid #e5e7eb; }
-  .filter-header h3 { font-size: 1.2rem; margin: 0; color: #001f3f; }
-  .filter-header p { font-size: 0.9rem; color: #6b7280; margin-bottom: 15px; }
-  .machinery-filter input[type="text"] { display: none !important; }
-
-  .machinery-filter .pagefind-ui, .machinery-filter #search, .price-filter-box .pagefind-ui, .price-filter-box #search { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; margin: 0 !important; }
-  .machinery-filter input:not([type="range"]) { display: none !important; }
-
-  .premium-custom-content table { width: 100%; border-collapse: collapse; margin: 20px 0; overflow-x: auto; display: block; }
   .social-proof { display: flex; gap: 12px; margin: 20px auto; justify-content: center; }
   .soc-btn { padding: 10px 20px; border-radius: 50px; text-decoration: none; color: white !important; font-size: 0.9rem; font-weight: bold; transition: transform 0.2s, opacity 0.2s; display: inline-block; }
   .fb { background: #1877F2; } .yt { background: #FF0000; }
