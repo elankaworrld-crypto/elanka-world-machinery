@@ -1,10 +1,10 @@
 ---
-title: "3 Line DY8 Ribbon Hot Foil Coding Machine"
+title: "3 Line DY8 Hot Foil Coding Machine in Sri Lanka"
 shortDescription: "Industrial 3-line DY8 hot foil stamping ribbon printing machine. Perfect for clear expiry date, batch numbers, and price printing in Sri Lanka."
 description: "Shop the best DY8 3-Line Ribbon Coding Machine in Sri Lanka. Ideal for packaging bags, pouches, and cardboards. Affordable expiry date printing solution."
 price: "Rs. 28,000"
-offerPrice: "18500"
-brand: "Atlas Lanka"
+offerPrice: "Rs 18,500"
+brand: "PACKONI"
 image: "/products/4-line-dy8-coding-machine.webp"
 images:
   - "/products/4-line-dy8-coding-machine.webp"

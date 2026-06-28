@@ -1,9 +1,9 @@
 ---
-title: "4 Line HP241F Automatic Ribbon Coding Machine"
+title: "4 Line HP241F Automatic Ribbon Coder in Sri Lanka"
 shortDescription: "Industrial automatic HP241F hot ribbon packaging line batch coder. Seamless integration into flow wrapping and form, fill, and seal machinery setups in Sri Lanka."
 description: "Shop the best 4-Line HP241F Automatic Ribbon Coding Machine in Sri Lanka. Ideal for seamless inline installation on automatic packaging machinery."
 price: "Rs. 95,000"
-offerPrice: "75000"
+offerPrice: "Rs 75,000"
 brand: "Atlas Lanka"
 image: "/products/4-line-HP-241F-Ribbon-coding-machine-in-sri-lanka.webp"
 images:

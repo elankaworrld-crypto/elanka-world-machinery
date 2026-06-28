@@ -1,9 +1,9 @@
 ---
-title: "36mm x 36mm Hot Ink Roll - Black"
+title: "36mm x 36mm Hot Ink Roll - Black - in Sri Lanka"
 shortDescription: "Premium 36mm x 36mm industrial black hot ink rolls for high-speed dry ink coding machines like the MY-380F. Long-lasting, smudge-proof formulation for Sri Lankan factories."
 description: "Buy high-quality 36mm x 36mm Black Hot Ink Rolls in Sri Lanka at an exclusive offer price. Perfect consumable for MY380F and continuous dry ink batch coders."
 price: "Rs. 1,200"
-offerPrice: "950"
+offerPrice: "Rs 950"
 brand: "Atlas Lanka"
 image: "/products/36mm-x-36mm-hot-ink-roll-black-in-srilanka.webp"
 images:

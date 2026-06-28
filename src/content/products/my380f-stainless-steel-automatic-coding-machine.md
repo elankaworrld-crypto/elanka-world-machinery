@@ -1,9 +1,9 @@
 ---
-title: "MY380F Stainless Steel Automatic Dry Ink Coding Machine"
+title: "MY380F Stainless Steel Automatic Dry Ink Coding Machine in Sri Lanka"
 shortDescription: "High-speed automatic structural MY380F batch date coder. Industrial solution for rapid stacking, separation, and print coding of labels and plastic pouches in Sri Lanka."
 description: "Shop the best MY380F Automatic Dry Ink Coding Machine in Sri Lanka. High-efficiency hot roller batch printer for large label stacks, pouches, and cardboards."
 price: "Rs. 165,000"
-offerPrice: "145000"
+offerPrice: "Rs 145,000"
 brand: "Atlas Lanka"
 image: "/products/MY380F-Dry-Ink-Coder.webp"
 images:

@@ -1,9 +1,9 @@
 ---
-title: "12.7mm Automatic Inkjet Label Coding Printer FLT with Paging Machine"
+title: "12.7mm Automatic Inkjet Label Coding Printer in Sri Lanka"
 shortDescription: "High-speed automatic friction-feed batch coding system featuring a 12.7mm TIJ inkjet printer. Prints razor-sharp expiration dates, barcodes, and prices on empty pouches and labels in Sri Lanka."
 description: "Shop the best 12.7mm Automatic Inkjet Coding Printer with Paging Machine in Sri Lanka. High-efficiency Zodpro FLT850 system prints 10,000+ labels per hour with crystal-clear precision."
 price: "Rs. 350,000"
-offerPrice: "250000"
+offerPrice: "Rs 250,000"
 brand: "Atlas Lanka"
 image: "/products/12.7mm-automatic-inkjet-coding-printer-FLT-with-paging-machine.webp"
 images:

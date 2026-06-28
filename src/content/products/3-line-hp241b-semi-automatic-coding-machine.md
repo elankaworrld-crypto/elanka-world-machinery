@@ -1,10 +1,10 @@
 ---
-title: "3 Line HP241B Semi Automatic Ribbon Coding Machine"
+title: "3 Line HP241B Semi Automatic Ribbon Coding Machine in Sri Lanka"
 shortDescription: "Industrial semi-automatic HP241B hot ribbon batch coder. High-speed 3-line expiry date, price, and batch number printing machine for Sri Lankan production lines."
 description: "Buy 3-Line HP241B Semi-Automatic Ribbon Coding Machine in Sri Lanka. High-efficiency hot foil stamp printing for polythene pouches, bags, and boxes."
 price: "Rs. 65,000"
-offerPrice: "55000"
-brand: "Atlas Lanka"
+offerPrice: "Rs 55,000"
+brand: "PACKONI"
 image: "/products/3--line-dy8-batch-price-ribbon-coding-machine-for-date-coding.webp"
 images:
   - "/products/3--line-dy8-batch-price-ribbon-coding-machine-for-date-coding.webp"

@@ -3,7 +3,7 @@ title: "MY380F Wide Stainless Steel Automatic Dry Ink Coding Machine"
 shortDescription: "Industrial MY380F wide-body automatic friction-feed batch coder. Extra width capacity for rapid separation and date printing on large labels and oversize packaging pouches in Sri Lanka."
 description: "Shop the best MY380F Wide Automatic Dry Ink Coding Machine in Sri Lanka. High-efficiency hot roller batch printer with extended feeding width for large pouches and cartons."
 price: "Rs. 195,000"
-offerPrice: "165000"
+offerPrice: "Rs 165,000"
 brand: "Atlas Lanka"
 image: "/products/MY380F-Dry-Ink-Coder.webp"
 images:

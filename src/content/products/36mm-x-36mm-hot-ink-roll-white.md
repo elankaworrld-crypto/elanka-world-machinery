@@ -1,5 +1,5 @@
 ---
-title: "36mm x 36mm Hot Ink Roll - White"
+title: "36mm x 36mm Hot Ink Roll - White - in Sri Lanka"
 shortDescription: "Premium 36mm x 36mm industrial white hot ink rolls for high-contrast batch coding on dark films. Perfect for MY-380F and automatic dry ink coding machines."
 description: "Buy high-quality 36mm x 36mm White Hot Ink Rolls in Sri Lanka at an exclusive offer price. Ideal contrast printing consumable for MY380F dry ink batch coders."
 price: "Rs. 1,200"
