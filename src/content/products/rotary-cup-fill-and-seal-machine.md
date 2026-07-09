@@ -5,7 +5,7 @@ description: "Industrial rotary cup filling & sealing machine for Sri Lankan bus
 image: "/products/rotary-cup-filling-machine-in-sri-lanka.webp"
 images:
   - "/products/rotary-cup-filling-machine-in-sri-lanka.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine", "Liquid & Paste Filling Machine", "Dairy Machinery", "Cup Sealing Machine"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Milk Filling Machine", "Juice Filling Machine", "Liquid & Paste Filling Machine", "Dairy Machinery", "Ice cream machinery", "Cup Sealing Machine"]
 price: "Rs. 2,800,000"
 priceNote: "Price fluctuates contact us for more"
 ---
