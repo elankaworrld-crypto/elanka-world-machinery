@@ -8,7 +8,7 @@ image: "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml
 images:
   - "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml-for-sale.webp"
   - "/products/Semi-autoatic-liquid-and-paste-filling-machine-100ml-to-1000ml.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Pneumatic Filling Machines"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Ice cream machinery", "Pneumatic Filling Machines"]
 youtubeId: "eaFv0g6Ga0s"
 features:
   - "Large-capacity pneumatic cylinder for bulk volumetric filling"

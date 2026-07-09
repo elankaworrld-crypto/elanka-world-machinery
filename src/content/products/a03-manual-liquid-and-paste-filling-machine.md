@@ -9,7 +9,7 @@ image: "/products/A03-manual-liquid-and-paste-filling-machine.webp"
 images:
   - "/products/A03-manual-liquid-and-paste-filling-machine.webp"
   - "/products/A03-manual-liquid-and-paste-filling-machine-in-srilanka.webp"
-categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Pneumatic Filling Machines"]
+categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines","Ice cream machinery", "Pneumatic Filling Machines"]
 youtubeId: "uodOAxGLVHQ"
 features:
   - "Highly accurate manual piston mechanism dosing from 5ml to 100ml"
