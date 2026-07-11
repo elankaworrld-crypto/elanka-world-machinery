@@ -1,6 +1,6 @@
 ---
 title: "Shrink Tunnel BS-260 Packoni"
-shortDescription: "Professional industrial shrink tunnel machine for high-efficiency thermal film packaging."
+shortDescription: "Professional industrial shrink tunnel machine for high-efficiency thermal film packaging. Conveyor speed 0 - 10 m/min, working size 750 x 260 x 160 mm, machine size 1000 x 420 x 500 mm "
 description: "Buy the best shrink tunnel machine in Sri Lanka. High-performance Packoni thermal shrink tunnel packaging machine for bottles and boxes with local warranty."
 price: "165,000"
 offerPrice: "145,000"
