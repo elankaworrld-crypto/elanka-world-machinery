@@ -3,7 +3,7 @@ title: "35cm Large Sealing Shrink Tunnel Machine"
 shortDescription: "Heavy-duty 35cm height sealing shrink tunnel for larger boxes and packaging bundles. High-efficiency chain conveyor layout optimized for Sri Lankan industries."
 description: "Shop the 35cm Large Sealing Shrink Tunnel Machine in Sri Lanka. Features a 78x40x35cm furnace size, digital control panel, and robust chain conveyor for high-speed industrial packaging."
 price: "Rs. 350,000"
-offerPrice: "350000"
+offerPrice: "Rs 300,000"
 brand: "E Lanka World"
 image: "/products/35cm-large-shrink-tunnel-for-sale-in-sri-lanka.webp"
 images:

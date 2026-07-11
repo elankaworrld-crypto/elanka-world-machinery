@@ -3,7 +3,7 @@ title: "BS 4535 Industrial Conveyor Shrink Tunnel Machine"
 shortDescription: "High-efficiency industrial shrink tunnel machine for PVC, POF, and PP films. Perfect for bulk packaging and heavy-duty product shrinking in Sri Lanka."
 description: "Buy the heavy-duty BS 4525 Shrink Tunnel Machine in Sri Lanka. Ideal for high-speed conveyor packaging of boxes, bottles, and multi-packs with precise heat controls."
 price: "Rs. 295,000"
-offerPrice: "295000"
+offerPrice: "Rs 285,000"
 brand: "E Lanka World"
 image: "/products/Bs-4525-shrink-tunnel-in-sri-lanka-for-sale-best-price.webp"
 images:
