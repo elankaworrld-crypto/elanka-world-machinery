@@ -6,9 +6,9 @@ image: "/products/1kg-powder-weighing-machine.webp"
 images:
   - "/products/1kg-powder-weighing-machine.webp"
   - "/products/1kg-powder-filling-machine-price-in-sri-lanka.webp"
-categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule & Powder Filing Machines", "Filling Machines"]
+categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule and Powder Filling Machines", "Filling Machines"]
 price: "Rs. 185,000"
-offerPrice: "185000"
+offerPrice: "Rs 145,000"
 ---
 
 ## 1kg Powder and Granule Filling Machine - Heavy-Duty Industrial Solution

@@ -5,9 +5,9 @@ description: "Industrial 500g powder and granule filling machine available in Sr
 image: "/products/500g-powder-filling-machine-sri-lanka.webp"
 images:
   - "/products/500g-powder-filling-machine-sri-lanka.webp"
-categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule & Powder Filing Machines", "Filling Machines"]
+categories: ["Powder Filling Machines", "Granule Filling Machines", "Granule and Powder Filling Machines", "Filling Machines"]
 price: "Rs. 98,500"
-offerPrice: "98500"
+offerPrice: "Rs 90,500"
 ---
 
 ## 500g Powder and Granule Filling Machine - High-Capacity Industrial Solution
