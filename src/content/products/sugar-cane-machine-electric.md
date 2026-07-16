@@ -11,7 +11,7 @@ price: "Rs. 200,000"
 offerPrice: "Rs. 155,000"
 ---
 
-## Commercial Electric Sugar Cane Juice Machine - High Yield Series
+## Commercial Electric Sugar Cane Juice Machine - සුගර් කෙන් යන්ත්‍රය  
 Maximize your beverage business production with our **Commercial Electric Sugar Cane Machine**. This heavy-duty sugarcane crusher is specifically engineered for high-volume commercial use, offering an exceptional extraction rate that ensures you get the most juice out of every stalk. 
 
 Whether you are running a busy juice bar, a restaurant, or a refreshment kiosk, finding a reliable **sugar cane machine for sale** is key to keeping up with customer demand. Built with premium materials and a powerful electric motor, this unit eliminates the intense manual labor of traditional crushers while delivering fast, hygienic, and profitable results.
