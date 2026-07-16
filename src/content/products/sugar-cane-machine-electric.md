@@ -4,7 +4,7 @@ shortDescription: "High-efficiency electric sugar cane crushing machine. Heavy-d
 description: "Commercial electric sugar cane machine price in Sri Lanka. Professional stainless steel juice extractor for businesses, offering high extraction rates and reliable performance."
 image: "/products/suger-cane-machine-electric-for-sale.webp"
 images:
-  - "/products/sugar-cane-machine-electric.webp"
+  - "/products/suger-cane-machine-electric.webp"
   - "/products/sugar-cane-machine-electric-for-sale.webp"
 categories: ["Processing Machinery", "Electric Juicer", "Juice Extractor", "Sugar Cane Machinery"]
 price: "Rs. 200,000"
