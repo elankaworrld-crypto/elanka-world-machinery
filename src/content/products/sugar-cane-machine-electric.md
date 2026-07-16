@@ -2,16 +2,16 @@
 title: "Electric Sugar Cane Juice Machine in Sri Lanka | Commercial Juice Extractor"
 shortDescription: "High-efficiency electric sugar cane crushing machine. Heavy-duty commercial juice extractor designed for high-yield beverage production."
 description: "Commercial electric sugar cane machine price in Sri Lanka. Professional stainless steel juice extractor for businesses, offering high extraction rates and reliable performance."
-image: "/products/suger-cane-machine-electric-for-sale.webp"
+image: "/products/suger-cane-machine-electric-in-sri-lanka.webp"
 images:
-  - "/products/suger-cane-machine-electric.webp"
-  - "/products/sugar-cane-machine-electric-for-sale.webp"
+  - "/products/suger-cane-machine-electric-in-sri-lanka.webp"
+  - "/products/suger-cane-machine-electric-for-sale-in-sri-lanka.webp"
 categories: ["Processing Machinery", "Electric Juicer", "Juice Extractor", "Sugar Cane Machinery"]
 price: "Rs. 200,000"
 offerPrice: "Rs. 155,000"
 ---
 
-## Commercial Electric Sugar Cane Juice Machine - සුගර් කෙන් යන්ත්‍රය  
+## Commercial Electric Sugar Cane Juice Machine - සුගර් කෙන් යන්ත්‍රය
 Maximize your beverage business production with our **Commercial Electric Sugar Cane Machine**. This heavy-duty sugarcane crusher is specifically engineered for high-volume commercial use, offering an exceptional extraction rate that ensures you get the most juice out of every stalk. 
 
 Whether you are running a busy juice bar, a restaurant, or a refreshment kiosk, finding a reliable **sugar cane machine for sale** is key to keeping up with customer demand. Built with premium materials and a powerful electric motor, this unit eliminates the intense manual labor of traditional crushers while delivering fast, hygienic, and profitable results.
