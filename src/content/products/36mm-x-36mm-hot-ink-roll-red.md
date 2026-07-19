@@ -9,7 +9,6 @@ image: "/products/36mm-x-36mm-hot-ink-roll-red-in-srilanka.webp"
 images:
   - "/products/36mm-x-36mm-hot-ink-roll-red-in-srilanka.webp"
 categories: ["Packaging Machinery", "Date Coding Machine", "Dry Ink Coder", "Hot Ink Rolls", "Dry Ink roll", "Date Coding Machine Cosumables"]
-youtubeId: ""
 features:
   - "Premium 36mm x 36mm industry-standard sizing"
   - "Vivid, striking red formulation designed for promotional batches or high-visibility stamping"
