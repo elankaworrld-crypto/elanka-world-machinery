@@ -9,7 +9,7 @@ image: "/products/110mm-x-300m-wax-ribbon-in-sri-lanka-for-sale.webp"
 images:
   - "/products/110mm-x-300m-wax-ribbon-in-sri-lanka-for-sale.webp"
   - "/products/110mm-x-300m-wax-ribbon-in-sri-lanka.webp"
-categories: ["Printer Consumables", "Barcode Printers", "Wax Ribbons", "Date Coding Machine"]
+categories: ["Printer Consumables", "Packaging Machinery", "Barcode Printers", "Wax Ribbons", "Date Coding Machine"]
 youtubeId: ""
 features:
   - "High-density dark black impressions for clear scanning"
