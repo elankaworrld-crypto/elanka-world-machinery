@@ -5,7 +5,7 @@ description: "Buy the Portable Bluetooth Thermal Label and Sticker Printer in Sr
 price: "Rs. 13,000"
 offerPrice: "Rs. 9,500"
 brand: "Atlas Lanka"
-image: "/products/Portable-bluetooth-printer-price-in-Sri-Lanka.webp"
+image: "/products/portable-bluetooth-printer-price-in-Sri-Lanka.webp"
 images:
   - "/products/Portable-bluetooth-printer-price-in-Sri-Lanka.webp"
   - "/products/portable-bluetooth-printer-price-in-Sri-Lanka-for-sale.webp"
