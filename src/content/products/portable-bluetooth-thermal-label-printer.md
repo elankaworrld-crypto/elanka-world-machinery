@@ -8,7 +8,7 @@ brand: "Atlas Lanka"
 image: "/products/Portable-bluetooth-printer-price-in-Sri-Lanka.webp"
 images:
   - "/products/Portable-bluetooth-printer-price-in-Sri-Lanka.webp"
-  - "/products/portable-bluetooth-printer-price-in-Sri-Lanka-gallery.webp"
+  - "/products/portable-bluetooth-printer-price-in-Sri-Lanka-for-sale.webp"
 categories: ["Label Printers", "Thermal printers", "bluetooth printers", "Barcode Printers", "Date Coding Machine", "Packaging Machinery"]
 youtubeId: "KerXZGfeSyo"
 features:
