@@ -3,7 +3,7 @@ title: "Conveyor Belt Fasteners Size 55 - High Tensile Steel"
 shortDescription: "High-tensile steel size 55 conveyor belt fasteners. Provides a secure, industrial-grade joint for conveyor belts, ensuring smooth and reliable operation."
 description: "Buy durable Size 55 conveyor belt fasteners in Sri Lanka at the best price. Ideal for heavy-duty industrial conveyor belt joining and repair."
 price: "Rs. 16,000"
-offerPrice: "13800"
+offerPrice: "Rs 13,800"
 brand: "Industrial Solutions"
 image: "/products/55-conveyor-belt-fastener-in-sri-lanka.webp"
 images:
