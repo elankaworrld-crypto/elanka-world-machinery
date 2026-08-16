@@ -79,6 +79,30 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
             <p>{item.data.shortDescription}</p>
           </div>
 
+          <!-- SEO Category Hub Links -->
+<div class="product-category-hub">
+  <span class="hub-title">Explore Related Categories:</span>
+  <div class="hub-links-grid">
+    <a href="/category/band-sealers/" class={`hub-link ${item.data.categories?.includes('Band Sealers') ? 'active-cat' : ''}`}>Band Sealers</a>
+    <a href="/category/polythene-sealers/" class={`hub-link ${item.data.categories?.includes('Polythene Sealers') ? 'active-cat' : ''}`}>All Polythene Sealers</a>
+    <a href="/category/can-sealing-machine/" class={`hub-link ${item.data.categories?.includes('Can Sealers') ? 'active-cat' : ''}`}>Can Sealers</a>
+    <a href="/category/date-coding-machine/" class={`hub-link ${item.data.categories?.includes('Date Printers') ? 'active-cat' : ''}`}>Date Printers</a>
+    <a href="/category/shrink-tunnel-machine/" class={`hub-link ${item.data.categories?.includes('Shrink Tunnels') ? 'active-cat' : ''}`}>Shrink Tunnels</a>
+    <a href="/category/cup-sealing-machine/" class={`hub-link ${item.data.categories?.includes('Cup Sealers') ? 'active-cat' : ''}`}>Cup Sealers</a>
+    <a href="/category/liquid-filling-machines/" class={`hub-link ${item.data.categories?.includes('Liquid Filling Machines') ? 'active-cat' : ''}`}>Liquid Filling Machines</a>
+    <a href="/category/powder-filling-machines/" class={`hub-link ${item.data.categories?.includes('Powder/Granule Fillers') ? 'active-cat' : ''}`}>Powder/Granule Fillers</a>
+    <a href="/category/dehydrator-machine/" class={`hub-link ${item.data.categories?.includes('Dehydrators') ? 'active-cat' : ''}`}>Dehydrators</a>
+    <a href="/category/heavy-duty-pedal-sealers/" class={`hub-link ${item.data.categories?.includes('Pedal Sealers') ? 'active-cat' : ''}`}>Pedal Sealers</a>
+    <a href="/category/paste-filling-machines/" class={`hub-link ${item.data.categories?.includes('Paste Filling Machines') ? 'active-cat' : ''}`}>Paste Filling Machines</a>
+    <a href="/category/induction-sealers/" class={`hub-link ${item.data.categories?.includes('Induction Sealers') ? 'active-cat' : ''}`}>Induction Sealers</a>
+    <a href="/category/capping-machinery/" class={`hub-link ${item.data.categories?.includes('Capping Machines') ? 'active-cat' : ''}`}>Capping Machines</a>
+    <a href="/category/strapping-machine/" class={`hub-link ${item.data.categories?.includes('Strapping Machine') ? 'active-cat' : ''}`}>Strapping Machine</a>
+    <a href="/category/vacuum-sealers/" class={`hub-link ${item.data.categories?.includes('Vacuum Sealers') ? 'active-cat' : ''}`}>Vacuum Sealers</a>
+    <a href="/category/bag-sewing-machine/" class={`hub-link ${item.data.categories?.includes('Bag Closures') ? 'active-cat' : ''}`}>Bag Closures</a>
+    <a href="/category/labelling-machines/" class={`hub-link ${item.data.categories?.includes('Labelling Machines') ? 'active-cat' : ''}`}>Labelling Machines</a>
+  </div>
+</div>
+
           <div class="actions">
   <a 
     href={`https://wa.me/94776344758?text=Hi, I am interested in the ${item.data.title}. Please send more details.`} 
@@ -286,6 +310,61 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
     align-items: center; /* Ensures button and text are centered */
   }
 }
+
+/* SEO Category Hub Section Styles */
+  .product-category-hub {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .hub-title {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .hub-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hub-link {
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .hub-link:hover {
+    background: #001f3f;
+    color: #ffffff;
+    border-color: #001f3f;
+  }
+
+  /* Mobile spacing adjustment */
+  @media (max-width: 768px) {
+    .product-category-hub {
+      margin: 20px 15px;
+      padding: 15px;
+    }
+    .hub-link {
+      font-size: 0.78rem;
+      padding: 5px 10px;
+    }
+  }
+</style> <!-- This is the existing closing style tag at the very end of your file -->
 </style>
     
 
