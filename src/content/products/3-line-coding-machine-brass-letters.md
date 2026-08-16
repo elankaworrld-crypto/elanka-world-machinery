@@ -8,8 +8,7 @@ brand: "Atlas Lanka"
 image: "/products/3-line-ribbon-printers-letters.webp"
 images:
   - "/products/3-line-ribbon-printers-letters.webp"
-categories: ["Packaging Machinery", "Date Coding Machine", "Hot Foil Ribbon", "DY8", "Hot Foil Stamping Machine", "DY8 Coding Machine", "HP241B Coding Machine", "Hp241F Coding machine"]
-youtubeId: ""
+categories: ["Packaging Machinery", "Date Coding Machine", "Hot Foil Ribbon", "DY8", "Hot Foil Stamping Machine", "DY8 Coding Machine", "HP241B Coding Machine", "Brass Coding Printer Letters", "Hp241F Coding machine"]
 features:
   - "Manufactured from premium, high-temperature resistant solid brass"
   - "Precision-engraved characters for crisp, smudge-free ribbon stamping"

@@ -9,7 +9,6 @@ image: "/products/brass-letters-for-4-line-ribbon-printers.webp"
 images:
   - "/products/brass-letters-for-4-line-ribbon-printers.webp"
 categories: ["Packaging Machinery", "Date Coding Machine", "Hot Foil Ribbon", "DY8", "Hot Foil Stamping Machine", "DY8 Coding Machine", "HP241B Coding Machine", "Brass Coding Printer Letters", "Hp241F Coding machine"]
-youtubeId: ""
 features:
   - "Manufactured from premium, high-temperature resistant solid brass"
   - "Precision-engraved characters for crisp, smudge-free ribbon stamping"
