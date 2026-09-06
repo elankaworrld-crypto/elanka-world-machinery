@@ -5,9 +5,9 @@ description: "Buy the Packoni HMR 1080 Continuous Inkjet Printer in Sri Lanka. H
 price: "Rs. 650,000"
 offerPrice: "Rs. 550,000"
 brand: "Packoni"
-image: "/products/contiines-inkjet-printer-in-sri-lanka-packoni-HMR700.webp"
+image: "/products/contiinues-inkjet-printer-in-sri-lanka-packoni-HMR700.webp"
 images:
-  - "/products/contiines-inkjet-printer-in-sri-lanka-packoni-HMR700.webp"
+  - "/products/contiinues-inkjet-printer-in-sri-lanka-packoni-HMR700.webp"
 categories: ["Packaging Machinery", "Date Coding Machine", "Expiry Date Printing Machine", "12.7 mm Inkjet printer", "Automatic Date Coding Machine", "25.4 mm Inkjet printer", "CIJ Printers", "Continues Inkjet Printers"]
 youtubeId: "h3OnobGj_JE"
 features:
