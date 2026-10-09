@@ -44,16 +44,21 @@ import Layout from '../layouts/Layout.astro';
 						<div class="snapshot-icon">🩹</div>
 						<h4>Conveyor Belts - කෙන්වෙයෝර් බෙල්ට් සහ උපාංග </h4>
 						<p>Canvas, PVC, Mesh, and premium local Rubber belts manufactured in Sri Lanka.</p>
+						<a href="/conveyor-accessories" class="snapshot-link-btn">Explore Belts &amp; Accessories &rarr;</a>
 					</div>
+					
 					<div class="conveyor-snapshot-item">
 						<div class="snapshot-icon">⚙️</div>
 						<h4>Conveyor Systems - කෙන්වෙයාර් සිස්ටෙම් </h4>
 						<p>Loading/unloading setups, gravity rollers, roller beds, and heavy freight elevators.</p>
+						<a href="/conveyor-system-assemblies-material-handling-sri-lanka" class="snapshot-link-btn">View System Assemblies &rarr;</a>
 					</div>
+					
 					<div class="conveyor-snapshot-item">
 						<div class="snapshot-icon">🛠️</div>
 						<h4>Accessories & Services - අනිකුත් උපාංග සහ සේවාවන් </h4>
 						<p>On-site vulcanizing, industrial motors, heavy-duty rollers, hinges, and custom spares.</p>
+						<a href="/custom-production-lines-automated-factory-sri-lanka" class="snapshot-link-btn">View Custom Solutions &rarr;</a>
 					</div>
 				</div>
 
@@ -380,6 +385,24 @@ import Layout from '../layouts/Layout.astro';
 	.conveyor-snapshot-item {
 		padding: 0.5rem 1rem;
 		border-left: 3px solid #2563eb;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.snapshot-link-btn {
+		display: inline-block;
+		margin-top: 1rem;
+		color: #2563eb;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.9rem;
+		transition: color 0.2s ease;
+	}
+
+	.snapshot-link-btn:hover {
+		color: #1d4ed8;
+		text-decoration: underline;
 	}
 
 	.snapshot-icon {
