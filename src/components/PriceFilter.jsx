@@ -9,17 +9,23 @@ export default function PriceFilter({ initialProducts, categoryName }) {
     });
   }, [initialProducts]);
 
-  const pricesOnly = productsWithPrices.map(p => p.numericPrice).filter(n => !isNaN(n));
-  const minPrice = Math.min(...pricesOnly) || 0;
-  const maxPrice = Math.max(...pricesOnly) || 100000;
+ const pricesOnly = productsWithPrices
+  .map(p => p.numericPrice)
+  .filter(n => !isNaN(n));
 
-  const [currentMax, setCurrentMax] = useState(maxPrice);
+const minPrice = pricesOnly.length ? Math.min(...pricesOnly) : 0;
+
+// Actual highest product price
+const maxPrice = pricesOnly.length ? Math.max(...pricesOnly) : 0;
+
+// Slider maximum includes a 10% safety buffer
+const sliderMax = Math.ceil(maxPrice * 1.10);
+
+  const [currentMax, setCurrentMax] = useState(sliderMax);
 
   useEffect(() => {
-    if (isFinite(maxPrice)) {
-      setCurrentMax(maxPrice);
-    }
-  }, [maxPrice]);
+  setCurrentMax(sliderMax);
+}, [sliderMax]);
 
   const filteredProducts = productsWithPrices.filter(p => p.numericPrice <= currentMax);
 
@@ -34,7 +40,7 @@ export default function PriceFilter({ initialProducts, categoryName }) {
           type="range" 
           id="price-slider" 
           min={minPrice} 
-          max={maxPrice} 
+          max={sliderMax} 
           value={currentMax} 
           step={maxPrice > 5000 ? 500 : 10}
           onInput={(e) => setCurrentMax(parseInt(e.target.value))}
