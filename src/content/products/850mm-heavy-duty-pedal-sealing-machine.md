@@ -4,7 +4,7 @@ shortDescription: "Industrial 850mm extra-wide single-side heavy-duty pedal impu
 description: "Buy the 850mm Heavy Duty Pedal Sealing Machine (850x1) in Sri Lanka. Extra-wide industrial step-on foot sealer with adjustable timer for large-format packaging."
 price: "Rs. 120,000"
 offerPrice: "Rs 95,000"
-brand: "Atlas Lanka"
+brand: "PACKONI"
 image: "/products/850mm-single-side-heavy-duty-pedal-sealing-machine.webp"
 images:
   - "/products/850mm-single-side-heavy-duty-pedal-sealing-machine.webp"
