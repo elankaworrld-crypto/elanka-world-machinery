@@ -103,20 +103,33 @@ const isActive = (path) => {
   function initSearch() {
     setTimeout(() => {
       if (typeof PagefindUI !== 'undefined') {
-        new PagefindUI({ 
-            element: "#search", 
-            showSubResults: true,
-            translations: { placeholder: "Search machinery..." } 
+
+        new PagefindUI({
+          element: "#search",
+          showSubResults: false,
+          showImages: true,
+          excerptLength: 20,
+          debounceTimeoutMs: 300,
+          translations: {
+            placeholder: "Search machinery and products..."
+          }
         });
-        new PagefindUI({ 
-            element: "#search-mobile", 
-            showSubResults: true,
-            translations: { placeholder: "Search..." } 
+
+        new PagefindUI({
+          element: "#search-mobile",
+          showSubResults: false,
+          showImages: true,
+          excerptLength: 20,
+          debounceTimeoutMs: 300,
+          translations: {
+            placeholder: "Search products..."
+          }
         });
+
       }
-    }, 500); 
+    }, 500);
   }
-  
+
   window.addEventListener('load', initSearch);
 
   // HAMBURGER LOGIC
