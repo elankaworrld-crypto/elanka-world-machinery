@@ -452,33 +452,59 @@ const isActive = (path) => {
     }
   }
 
-  /* 7. PAGEFIND PANEL CUSTOM OVERRIDES */
-  .pagefind-ui__drawer {
-    position: relative !important;
-  }
+  /* 7. PAGEFIND FLOATING SEARCH RESULTS */
 
-  .pagefind-ui__drawer::before {
-    content: "✕";
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #dc2626;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    background: white;
-    padding: 5px;
-    line-height: 1;
-  }
+/* Keep the desktop search box as the dropdown anchor */
+.search-wrapper {
+  position: relative;
+}
 
-  @media (max-width: 768px) {
-    .pagefind-ui__drawer::before {
-      top: 10px;
-      right: 10px;
-      font-size: 26px;
-    }
+/* Keep the mobile search box as the dropdown anchor */
+.mobile-search-layer {
+  position: relative;
+}
+
+/* Floating results panel */
+.pagefind-ui__drawer {
+  position: absolute !important;
+  top: calc(100% + 12px);
+  left: 0;
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(65vh, 560px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+  z-index: 1200;
+}
+
+/* Mobile dropdown positioning */
+@media (max-width: 768px) {
+  .mobile-search-layer .pagefind-ui__drawer {
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    max-width: calc(100vw - 40px);
   }
+}
+
+/* Keep the existing clear-search X */
+.pagefind-ui__drawer::before {
+  content: "✕";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #dc2626;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1201;
+  background: white;
+  padding: 5px;
+  line-height: 1;
+}
 
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
