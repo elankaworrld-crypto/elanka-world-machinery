@@ -454,43 +454,63 @@ const isActive = (path) => {
 
   /* 7. PAGEFIND FLOATING SEARCH RESULTS */
 
-/* Keep the desktop search box as the dropdown anchor */
-.search-wrapper {
-  position: relative;
-}
-
-/* Keep the mobile search box as the dropdown anchor */
+/* Search box positioning */
+.search-wrapper,
 .mobile-search-layer {
   position: relative;
 }
 
-/* Floating results panel */
+/* Main floating dropdown */
 .pagefind-ui__drawer {
   position: absolute !important;
-  top: calc(100% + 12px);
-  left: 0;
-  width: min(560px, calc(100vw - 32px));
-  max-height: min(65vh, 560px);
-  overflow-y: auto;
-  box-sizing: border-box;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
-  z-index: 1200;
+  top: calc(100% + 12px) !important;
+  left: 0 !important;
+  width: min(560px, calc(100vw - 32px)) !important;
+  max-height: none !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  border: 1px solid #dbe3ec !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18) !important;
+  z-index: 1200 !important;
 }
 
-/* Mobile dropdown positioning */
+/* White background throughout the results */
+.pagefind-ui__results-area,
+.pagefind-ui__results,
+.pagefind-ui__message {
+  background: #ffffff !important;
+}
+
+/* Make the results themselves scroll independently */
+.pagefind-ui__results-area {
+  max-height: min(60vh, 480px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
+/* Individual result backgrounds */
+.pagefind-ui__result {
+  background: #ffffff !important;
+}
+
+/* Mobile dropdown */
 @media (max-width: 768px) {
   .mobile-search-layer .pagefind-ui__drawer {
-    top: calc(100% + 8px);
-    left: 0;
-    width: 100%;
-    max-width: calc(100vw - 40px);
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    width: calc(100vw - 40px) !important;
+  }
+
+  .pagefind-ui__results-area {
+    max-height: 55vh !important;
   }
 }
 
-/* Keep the existing clear-search X */
+/* Existing close symbol */
 .pagefind-ui__drawer::before {
   content: "✕";
   position: absolute;
@@ -501,7 +521,7 @@ const isActive = (path) => {
   font-weight: bold;
   cursor: pointer;
   z-index: 1201;
-  background: white;
+  background: #ffffff;
   padding: 5px;
   line-height: 1;
 }
