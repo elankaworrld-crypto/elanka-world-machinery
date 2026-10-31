@@ -3,7 +3,7 @@ title: "850mm Double Side Heavy Duty Pedal Sealing Machine (850x2)"
 shortDescription: "Industrial 850mm double-heating jaw pedal impulse sealer. Heavy-duty extra-wide leg-push foot sealer engineered for oversized laminated sacks and ultra-thick pouches in Sri Lanka."
 description: "Buy the 850mm Double Side Heavy Duty Pedal Sealing Machine (850x2) in Sri Lanka. Extra-wide dual-heating jaw foot sealer designed for thick commercial packaging."
 price: "Rs. 121,000"
-offerPrice: "96000"
+offerPrice: "Rs. 96,000"
 brand: "Atlas Lanka"
 image: "/products/850mm-single-side-heavy-duty-pedal-sealing-machine.webp"
 images:

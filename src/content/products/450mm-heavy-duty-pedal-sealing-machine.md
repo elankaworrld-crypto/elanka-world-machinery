@@ -3,7 +3,7 @@ title: "450mm Heavy Duty Pedal Sealing Machine (450x1)"
 shortDescription: "Industrial 450mm single-side heavy-duty pedal impulse sealer. Leg-push operated foot sealer for extra-strong packaging bag and pouch structural closure in Sri Lanka."
 description: "Buy the 450mm Heavy Duty Pedal Sealing Machine (450x1) in Sri Lanka. Industrial step-on foot sealer with adjustable timer control for secure plastic packaging sealing."
 price: "Rs. 75,000"
-offerPrice: "65000"
+offerPrice: "Rs 65,000"
 brand: "Atlas Lanka"
 image: "/products/450mm-single-side-heavy-duty-pedal-sealing-machine.webp"
 images:
