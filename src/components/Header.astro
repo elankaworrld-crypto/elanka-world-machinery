@@ -130,6 +130,24 @@ const isActive = (path) => {
     }, 500);
   }
 
+  // Close and reset search when clicking or tapping outside
+document.addEventListener('pointerdown', (event) => {
+
+  const clickedInsideSearch = event.target.closest(
+    '.search-wrapper, .mobile-search-layer'
+  );
+
+  if (!clickedInsideSearch) {
+
+    document.querySelectorAll('.pagefind-ui__search-input').forEach((input) => {
+      input.value = '';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+
+  }
+
+});
+
   window.addEventListener('load', initSearch);
 
   // HAMBURGER LOGIC
