@@ -15,6 +15,9 @@ images:
 
 categories: ["Packaging Machinery", "Filling Machines", "Liquid Filling Machines", "Paste Filling Machines", "Liquid & Paste Filling Machine", "Piston Filling Machines", "Pneumatic Filling Machines", "Sauce Machinery", "Jam Machinery", "Oil Machinery"]
 
+price: "Rs. 2,000,000"
+offerPrice: "Rs 1,700,000"
+
 features:
   - "Automatic in-line piston liquid and paste filling system"
   - "Flexible filling capacity from 10ml to 5000ml"
