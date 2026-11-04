@@ -7,11 +7,11 @@ description: "Buy an Automatic Small Pouch Packing Machine in Sri Lanka for comm
 
 brand: "PACKONI"
 
-image: "/products/2-200g-automatic-filling-and-sealing-machine"
+image: "/products/2-200g-automatic-filling-and-sealing-machine.webp"
 
 images:
-  - "/products/2-200g-automatic-filling-and-sealing-machine"
-  - "2-200g-automatic-filling-and-sealing-machine-in-sri-lanka"
+  - "/products/2-200g-automatic-filling-and-sealing-machine.webp"
+  - "2-200g-automatic-filling-and-sealing-machine-in-sri-lanka.webp"
 
 categories: ["Packaging Machinery", "Automatic Packing Machines", "Pouch Packing Machines", "Tea Packing Machines", "Food Packaging Machinery", "Spice Packing Machines"]
 
