@@ -15,6 +15,9 @@ images:
 
 categories: ["Packaging Machinery", "Automatic Packing Machines", "Pouch Packing Machines", "Tea Packing Machines", "Food Packaging Machinery", "Spice Packing Machines"]
 
+price: "Rs. 785,000"
+offerPrice: "Rs 445,000"
+
 features:
   - "Automatic weighing, filling and heat-sealing operation"
   - "Adjustable filling capacity from 2g to 200g"
