@@ -12,10 +12,10 @@ offerPrice: "Rs. 95,000"
 
 brand: "XingYun"
 
-image: "/products/moisture-analyzer-price-in-sri-lanka.webp"
+image: "/products/moisture-analyzer-price-in-Sri-Lanka.webp"
 
 images:
-  - "/products/moisture-analyzer-price-in-sri-lanka.webp"
+  - "/products/moisture-analyzer-price-in-Sri-Lanka.webp"
 
 categories: ["Packaging Machinery", "Moisture Analyzer", "Processing Machinery", "Moisture Meter"]
 
