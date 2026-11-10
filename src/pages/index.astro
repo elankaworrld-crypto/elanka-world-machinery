@@ -87,6 +87,78 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 		</section>
+
+<!-- MACHINERY QUICK LINKS SECTION -->
+<section class="machinery-links-section" aria-labelledby="machinery-links-title">
+    <div class="container">
+
+        <h2 id="machinery-links-title" class="machinery-links-title">
+            Explore Our Packaging & Industrial Machinery
+        </h2>
+
+        <p class="machinery-links-subtitle">
+            Discover our range of industrial packaging, filling, sealing,
+            coding and material handling machinery in Sri Lanka.
+        </p>
+
+        <nav class="machinery-links-grid" aria-label="Machinery categories">
+
+            <a href="https://elanka.world/category/sealing-machines/" class="machinery-link-card">
+                <span>Heat Sealing Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/date-coding-machine/" class="machinery-link-card">
+                <span>Date Coding Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/can-seamer/" class="machinery-link-card">
+                <span>Can Sealing Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/vacuum-sealers/" class="machinery-link-card">
+                <span>Vacuum Sealers</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/dehydrator-machine/" class="machinery-link-card">
+                <span>Food Dehydrators</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/conveyor/" class="machinery-link-card">
+                <span>Custom Conveyor Systems</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/strapping-machine/" class="machinery-link-card">
+                <span>Strapping Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/shrink-tunnel-machine/" class="machinery-link-card">
+                <span>Shrink Tunnel Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/liquid-filling-machines/" class="machinery-link-card">
+                <span>Liquid & Paste Filling Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a href="https://elanka.world/category/powder-filling-machines/" class="machinery-link-card">
+                <span>Powder & Granule Filling Machines</span>
+                <span class="machinery-link-arrow" aria-hidden="true">→</span>
+            </a>
+
+        </nav>
+
+    </div>
+</section>
+<!-- END MACHINERY QUICK LINKS SECTION -->
+
 		<section class="seo-article-section">
     <div class="container">
         <h2 class="article-title">Why E Lanka World International is the Best Place to Buy Machinery in Sri Lanka</h2>
@@ -427,5 +499,110 @@ import Layout from '../layouts/Layout.astro';
       .video-grid { grid-template-columns: 1fr; } /* 1 column on Mobile */
       .youtube-hub { padding: 4rem 1rem; }
   }
+
+
+/* MACHINERY QUICK LINKS SECTION */
+
+.machinery-links-section {
+    padding: 4rem 1.5rem;
+    background: #f1f5f9;
+}
+
+.machinery-links-title {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    line-height: 1.25;
+    color: #001f3f;
+    font-weight: 800;
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+.machinery-links-subtitle {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.machinery-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.machinery-link-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 65px;
+    padding: 1rem 1.2rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2563eb;
+    border-radius: 10px;
+    color: #001f3f;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    transition: border-color 0.2s ease, transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.machinery-link-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 31, 63, 0.08);
+}
+
+.machinery-link-arrow {
+    flex-shrink: 0;
+    color: #2563eb;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.machinery-link-card:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .machinery-links-section {
+        padding: 3rem 1rem;
+    }
+
+    .machinery-links-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .machinery-links-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .machinery-link-card {
+        min-height: 58px;
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .machinery-link-card {
+        transition: none;
+    }
+
+    .machinery-link-card:hover {
+        transform: none;
+    }
+}
+
 
 </style>
