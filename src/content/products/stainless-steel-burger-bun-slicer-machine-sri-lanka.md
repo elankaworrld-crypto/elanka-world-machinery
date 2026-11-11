@@ -11,7 +11,7 @@ images:
   - "/products/burgher-bun-cutting-machine-in-sri-lanka.webp"
 categories:
   - "Processing Machinery"
-  - "Food Processing Machinery"
+  - "Food Processing Machines"
   - "Bakery Machinery"
   - "Restaurant Machinery"
   - "Hotel Machinery"
