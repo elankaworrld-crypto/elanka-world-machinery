@@ -3,6 +3,8 @@
 title: "Electric Corn Kernel Remover Machine in Sri Lanka | Automatic Corn Sheller"
 shortDescription: "Electric corn kernel remover machine for separating corn kernels from cobs. Suitable for sweet corn processing, food preparation, restaurants, hotels and commercial food processing businesses in Sri Lanka."
 description: "Electric Corn Kernel Remover Machine available in Sri Lanka from E Lanka World International. Designed to remove corn kernels from corn cobs efficiently, making it suitable for sweet corn processing, commercial food preparation, restaurants, hotels and food processing businesses."
+price: "Rs. 70,000"
+offerPrice: "Rs. 52,000"
 image: "/products/corn-kernal-romoving-machine-for-sale.webp"
 images:
   - "/products/corn-kernal-romoving-machine-for-sale-in-sri-lanka.webp"
