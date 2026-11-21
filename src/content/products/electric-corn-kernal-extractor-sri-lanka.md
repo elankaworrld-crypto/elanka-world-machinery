@@ -8,6 +8,7 @@ offerPrice: "Rs. 52,000"
 image: "/products/corn-kernal-romoving-machine-for-sale.webp"
 images:
   - "/products/corn-kernal-romoving-machine-for-sale-in-sri-lanka.webp"
+  - "/products/corn-kernal-romoving-machine-for-sale.webp"
 categories: ["Processing Machinery", "Food Processing Machines", "Restaurant Machinery", "Hotel Machinery", "Kitchen Machinery", "Corn Kernal Remover", "hotel kitchen equipment"]
 ---
 
