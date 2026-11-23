@@ -6,7 +6,10 @@ import { getCollection } from 'astro:content';
 const allProducts = await getCollection('products');
 ---
 
-<Layout title="Machinery Shop | E Lanka World">
+<Layout
+  title="Packaging & Processing Machinery in Sri Lanka | E Lanka World"
+  description="Explore packaging, food processing, date coding, filling, sealing and industrial machinery from E Lanka World International, Sri Lanka. View product details and contact us for prices."
+>
   
   <main class="shop-container">
   <header class="shop-header">
@@ -23,14 +26,28 @@ const allProducts = await getCollection('products');
   
     
     <div class="product-grid">
-      {allProducts.map((item) => (
+      {allProducts.map((item, itemIndex) => (
         <div class="product-card">
           <div class="image-wrapper">
-            <img src={item.data.image} alt={item.data.title} loading="lazy" />
-          </div>
+  <a href={`/products/${item.id}`} aria-label={`View ${item.data.title}`}>
+    <img
+      src={item.data.image}
+      alt={item.data.title}
+      width="600"
+      height="600"
+      loading={itemIndex === 0 ? "eager" : "lazy"}
+      fetchpriority={itemIndex === 0 ? "high" : "auto"}
+      decoding="async"
+    />
+  </a>
+</div>
           
           <div class="info">
-            <h3>{item.data.title}</h3>
+            <h3>
+  <a href={`/products/${item.id}`} class="product-title-link">
+    {item.data.title}
+  </a>
+</h3>
             
 
             <div class="price-container">
@@ -113,20 +130,23 @@ const allProducts = await getCollection('products');
   }
 
   .image-wrapper {
-    height: 220px;
-    background: #fdfdfd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-bottom: 1px solid #f3f4f6;
-  }
+  width: 100%;
+  height: 220px;
+  background: #fdfdfd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-bottom: 1px solid #f3f4f6;
+  box-sizing: border-box;
+}
 
-  .image-wrapper img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
   .info { padding: 20px; flex-grow: 1; }
 
@@ -205,4 +225,13 @@ const allProducts = await getCollection('products');
     background: #128c7e; 
     transform: scale(1.02);
   }
+
+  .product-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-title-link:hover {
+  color: #0056a3;
+}
 </style>

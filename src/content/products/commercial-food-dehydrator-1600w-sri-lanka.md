@@ -1,5 +1,5 @@
 ---
-title: "Commercial Food Dehydrator in Sri Lanka | 1600W SILAIER Drying Machine"
+title: "20 Tray Rotating Dehydrator in Sri Lanka | 1600W Drying Machine"
 shortDescription: "High-capacity 1600W SILAIER commercial dehydrator with PLC time-control. Durable stainless steel build for industrial food processing."
 description: "Professional food dryer machine price in Colombo. Features 1600W power, 30-90°C adjustable temperature, and 24-hour PLC timing for commercial vegetable and fruit drying."
 image: "/products/food-drying-net.webp"
