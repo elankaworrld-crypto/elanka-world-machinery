@@ -183,9 +183,10 @@ const toIndustrySlug = (industry: string) =>
   .product-top-grid { 
     display: grid; 
     grid-template-columns: 1.2fr 1fr; 
-    gap: 60px; 
+    align-items: start;
+    gap: 40px; 
     background: white; 
-    padding: 40px; 
+    padding: 32px; 
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
@@ -263,21 +264,19 @@ const toIndustrySlug = (industry: string) =>
 
   /* --- FINAL COMBINED RESPONSIVE SECTION --- */
   @media (max-width: 768px) {
-    /* 1. Prevent any side-scrolling or footer gaps */
-    body, html {
-      overflow-x: hidden;
-      width: 100%;
-      margin: 0;
-      padding: 0;
+    /* 1. Prevent side-scrolling without wiping body top padding */
+    html, body {
+      overflow-x: clip;
+      max-width: 100%;
     }
 
-    /* 2. Force the page and container to be edge-to-edge */
+    /* 2. Keep page flush while matching mobile header clearance */
     .product-page, main, .container {
-      padding: 0 !important; 
+      padding-left: 0 !important;
+      padding-right: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
-      overflow-x: hidden;
-      margin-top: 110px; /* Keeps the header clearance */
+      margin-top: 0;
     }
 
     /* 3. Make the product box hit the screen edges */
