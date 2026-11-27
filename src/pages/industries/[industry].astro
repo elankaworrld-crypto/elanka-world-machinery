@@ -1,0 +1,389 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const toIndustrySlug = (industry: string) =>
+  industry
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const injectionModules = import.meta.glob<{ default: any }>(
+  '../../components/industry-injections/*.astro',
+  { eager: true }
+);
+
+export async function getStaticPaths() {
+  const slugify = (industry: string) =>
+    industry
+      .toLowerCase()
+      .trim()
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
+  const products = await getCollection('products');
+  const industryMap = new Map<string, { name: string; items: typeof products }>();
+
+  for (const product of products) {
+    const productIndustries = product.data.industries ?? [];
+    for (const rawName of productIndustries) {
+      const cleanName = rawName.trim();
+      if (!cleanName) continue;
+
+      const slug = slugify(cleanName);
+      if (!slug) continue;
+
+      if (!industryMap.has(slug)) {
+        industryMap.set(slug, { name: cleanName, items: [] });
+      }
+      industryMap.get(slug)!.items.push(product);
+    }
+  }
+
+  const allIndustries = Array.from(industryMap.entries()).map(([slug, data]) => ({
+    slug,
+    name: data.name,
+    count: data.items.length,
+  }));
+
+  return Array.from(industryMap.entries()).map(([industrySlug, data]) => ({
+    params: { industry: industrySlug },
+    props: {
+      industryName: data.name,
+      industrySlug,
+      products: data.items,
+      otherIndustries: allIndustries.filter((item) => item.slug !== industrySlug),
+    },
+  }));
+}
+
+interface OtherIndustry {
+  slug: string;
+  name: string;
+  count: number;
+}
+
+const { industryName, industrySlug, products, otherIndustries } = Astro.props as {
+  industryName: string;
+  industrySlug: string;
+  products: Awaited<ReturnType<typeof getCollection<'products'>>>;
+  otherIndustries: OtherIndustry[];
+};
+
+const injectionKey = `../../components/industry-injections/${industrySlug}.astro`;
+const InjectionComponent = injectionModules[injectionKey]?.default;
+
+const seoTitle = `Machinery for ${industryName} Business in Sri Lanka | E Lanka World`;
+---
+
+<Layout title={seoTitle}>
+  <main class="industry-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Home</a> / <a href="/shop">Shop</a> / <span>{industryName}</span>
+      </nav>
+
+      <header class="industry-header">
+        <h1>Machinery for {industryName} Business in Sri Lanka</h1>
+        <h2>From E Lanka World International</h2>
+        <p class="intro-copy">
+          Below are machinery from E Lanka World International for companies in {industryName} industry in Sri Lanka.
+        </p>
+      </header>
+
+      <section class="linked-products" aria-label={`${industryName} Machinery`}>
+        <div class="product-grid">
+          {products.map((product) => (
+            <article class="product-card">
+              <a href={`/products/${product.id}/`} class="card-link">
+                <div class="image-wrap">
+                  {product.data.image && (
+                    <img
+                      src={product.data.image}
+                      alt={product.data.title}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                <h3 class="product-title">{product.data.title}</h3>
+                {product.data.shortDescription && (
+                  <p class="product-desc">{product.data.shortDescription}</p>
+                )}
+                <div class="price-row">
+                  {product.data.offerPrice ? (
+                    <>
+                      <span class="old-price">{product.data.price}</span>
+                      <span class="current-price sale">{product.data.offerPrice}</span>
+                    </>
+                  ) : (
+                    <span class="current-price">{product.data.price}</span>
+                  )}
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {InjectionComponent && (
+        <section class="industry-seo-injection" aria-label={`${industryName} Guide`}>
+          <InjectionComponent />
+        </section>
+      )}
+
+      {otherIndustries.length > 0 && (
+        <section class="other-industries" aria-label="Other Industries">
+          <h2>Other Industries</h2>
+          <div class="other-industries-list">
+            {otherIndustries.map((other) => (
+              <a href={`/industries/${other.slug}/`} class="industry-chip">
+                {other.name}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .industry-page {
+    padding: 20px 0 60px;
+    margin-top: 80px;
+    background-color: #f9fafb;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 24px;
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .breadcrumb a:hover {
+    color: #001f3f;
+  }
+
+  .industry-header {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
+  }
+
+  .industry-header h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    line-height: 1.25;
+    color: #111827;
+  }
+
+  .industry-header h2 {
+    margin: 0 0 16px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0369a1;
+  }
+
+  .intro-copy {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .product-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 210px;
+    margin-bottom: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .product-title {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    line-height: 1.35;
+    color: #111827;
+  }
+
+  .product-desc {
+    margin: 0 0 16px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #4b5563;
+    flex-grow: 1;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .old-price {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+
+  .current-price {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .current-price.sale {
+    color: #d946ef;
+  }
+
+  .industry-seo-injection {
+    margin-top: 36px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    line-height: 1.75;
+    color: #374151;
+  }
+
+  .industry-seo-injection :global(h2) {
+    margin-top: 0;
+    font-size: 1.45rem;
+    color: #111827;
+  }
+
+  .industry-seo-injection :global(h3) {
+    margin-top: 20px;
+    font-size: 1.15rem;
+    color: #111827;
+  }
+
+  .industry-seo-injection :global(ul) {
+    padding-left: 20px;
+  }
+
+  .industry-seo-injection :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .other-industries {
+    margin-top: 36px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .other-industries h2 {
+    margin: 0 0 16px;
+    font-size: 1.35rem;
+    color: #111827;
+  }
+
+  .other-industries-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .industry-chip {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0c4a6e;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .industry-chip:hover {
+    background: #0369a1;
+    color: #ffffff;
+    border-color: #0369a1;
+  }
+
+  @media (max-width: 960px) {
+    .product-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .industry-page {
+      margin-top: 120px;
+    }
+
+    .industry-header,
+    .industry-seo-injection,
+    .other-industries {
+      padding: 20px;
+    }
+
+    .industry-header h1 {
+      font-size: 1.55rem;
+    }
+
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

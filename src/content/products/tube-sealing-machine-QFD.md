@@ -8,6 +8,10 @@ images: [
 price: "Rs. 450,000"
 offerPrice: "Rs. 325,000"
 categories: ["Packaging Machinery", "Sealing Solutions", "Band Sealers", "Sealing Machines", "Tube Sealing Machines", "Cream Machinery"]
+
+industries: ["Cosmetics Manufacturing", "Industrial Manufacturing", "Pharmaceutical Manufacturing"]
+
+
 shortDescription: "High-performance ultrasonic tube sealing machine designed for secure sealing of plastic and laminated cosmetic tubes with precision digital controls."
 ---
 

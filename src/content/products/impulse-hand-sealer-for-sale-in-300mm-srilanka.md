@@ -8,7 +8,7 @@ image: "/products/impulse-hand-sealer-for-sale-in-300mm-srilanka.webp"
 images:
   - "/products/pfs-300i-polythene-sealer-price-sri-lanka.webp"
   - "/products/300mm-hand-sealing-machine-sri-lanka.webp"
-categories: ["Packaging Machinery", "Sealing Solutions", "Sealing Machines", "Polythene Sealers", "Hand Impulse Sealers"]
+categories: ["Packaging Machinery", "Sealing Solutions", "Ice Packet Sealing Machine", "Sealing Machines", "Polythene Sealers", "Bakery Machinery", "Small Business Machinery", "Hand Impulse Sealers"]
 features:
   - "Practical 300mm (12 inches) sealing length perfect for standard bag sizes"
   - "8-level adjustable heat setting timer to control seal depth"

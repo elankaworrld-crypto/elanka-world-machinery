@@ -10,6 +10,7 @@ const products = defineCollection({
     image: z.string(),
     images: z.array(z.string()).optional(),
     categories: z.array(z.string()),
+    industries: z.array(z.string()).optional(),
     price: z.string(), // Original Price
     offerPrice: z.string().optional(), // New Sale Price
   }),

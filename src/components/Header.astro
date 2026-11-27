@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 const pathname = new URL(Astro.request.url).pathname;
 
 const isActive = (path) => {
@@ -13,6 +14,33 @@ const isActive = (path) => {
   }
   return pathname.startsWith(path);
 };
+
+const toIndustrySlug = (industry: string) =>
+  industry
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const allProducts = await getCollection('products');
+const industryMap = new Map<string, { name: string; slug: string }>();
+
+for (const product of allProducts) {
+  for (const rawIndustry of product.data.industries ?? []) {
+    const cleanName = rawIndustry.trim();
+    if (!cleanName) continue;
+    const slug = toIndustrySlug(cleanName);
+    if (!slug) continue;
+    if (!industryMap.has(slug)) {
+      industryMap.set(slug, { name: cleanName, slug });
+    }
+  }
+}
+
+const navIndustries = Array.from(industryMap.values()).sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
 ---
 
 <header class="main-header">
@@ -79,7 +107,33 @@ const isActive = (path) => {
                     </div>
                 </div>
 
-                <a href="/industries" class={`nav-link ${isActive('/industries') ? "active" : ""}`}>Industries</a>
+                <div class="dropdown-wrapper" id="industryDropdown">
+  <div class="dropdown-nav-group">
+    <a href="/industries" class={`nav-link main-shop-link ${isActive('/industries') ? "active" : ""}`}>
+      Industries
+    </a>
+    {navIndustries.length > 0 && (
+      <button class="dropdown-arrow-btn" aria-label="Toggle Industries Menu" aria-expanded="false">
+        <span class="dropdown-caret">▼</span>
+      </button>
+    )}
+  </div>
+  {navIndustries.length > 0 && (
+    <div class="dropdown-menu">
+      {navIndustries.map((ind) => {
+        const targetPath = `/industries/${ind.slug}/`;
+        return (
+          <a
+            href={targetPath}
+            class={`submenu-link ${pathname === targetPath ? 'sub-active' : ''}`}
+          >
+            {ind.name}
+          </a>
+        );
+      })}
+    </div>
+  )}
+</div>
                 <a href="https://wa.me/94776344758" class="contact-btn">Contact</a>
             </nav>
 
@@ -162,7 +216,8 @@ document.addEventListener('pointerdown', (event) => {
   // UNIVERSAL INTERACTIVE ENGINE FOR MULTIPLE DROPDOWNS
   const dropdowns = [
     { id: 'shopDropdown', path: '/shop' },
-    { id: 'conveyorDropdown', path: '/conveyor' }
+    { id: 'conveyorDropdown', path: '/conveyor' },
+    { id: 'industryDropdown', path: '/industries' }
   ];
 
   dropdowns.forEach(({ id }) => {

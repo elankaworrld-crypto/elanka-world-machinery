@@ -15,6 +15,17 @@ const { Content } = await render(item);
 
 // SEO dynamic title
 const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
+
+const industries: string[] = item.data.industries ?? [];
+
+const toIndustrySlug = (industry: string) =>
+  industry
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 ---
 
 <Layout title={seoTitle}>
@@ -116,6 +127,20 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
     Inquire via WhatsApp
   </a>
   <p class="hotline">Or Call: <strong>0776344758</strong></p>
+
+  {industries.length > 0 && (
+    <div class="product-industries-hub">
+      <span class="industries-title">Suitable Industries:</span>
+      <div class="industries-links-grid">
+        {industries.map((industry) => (
+          <a href={`/industries/${toIndustrySlug(industry)}/`} class="industry-pill">
+            {industry}
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
 </div>
         </section>
       </div>
@@ -365,7 +390,66 @@ const seoTitle = `${item.data.title} Best Price in Sri Lanka | E Lanka World`;
       padding: 5px 10px;
     }
   }
+
+  /* Product Industries Section (Below Call/WhatsApp) */
+  .product-industries-hub {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px 18px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .industries-title {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0369a1;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .industries-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .industry-pill {
+    background: #ffffff;
+    color: #0c4a6e;
+    border: 1px solid #7dd3fc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .industry-pill:hover {
+    background: #0369a1;
+    color: #ffffff;
+    border-color: #0369a1;
+  }
+
+  @media (max-width: 768px) {
+    .product-industries-hub {
+      width: auto;
+      margin: 18px 15px 0;
+      padding: 14px;
+    }
+
+    .industry-pill {
+      font-size: 0.78rem;
+      padding: 5px 10px;
+    }
+  }
+  
 </style> <!-- This is the existing closing style tag at the very end of your file -->
-</style>
     
 

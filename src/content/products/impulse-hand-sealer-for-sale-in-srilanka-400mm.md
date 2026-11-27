@@ -8,7 +8,7 @@ image: "/products/impulse-hand-sealer-for-sale-in-srilanka-400mm.webp"
 images:
   - "/products/pfs-400i-polythene-sealer-price-sri-lanka.webp"
   - "/products/400mm-hand-sealing-machine-sri-lanka.webp"
-categories: ["Packaging Machinery", "Sealing Solutions", "Sealing Machines", "Polythene Sealers", "Hand Impulse Sealers"]
+categories: ["Packaging Machinery", "Sealing Solutions", "Sealing Machines", "Ice Packet Sealing Machine", "Polythene Sealers", "Bakery Machinery", "Small Business Machinery", "Hand Impulse Sealers"]
 features:
   - "Generous 400mm (16 inches) sealing length for wider bags"
   - "Adjustable 8-level timer control knob for varying material thicknesses"
